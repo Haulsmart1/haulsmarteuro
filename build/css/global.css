@@ -1,0 +1,70 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.page {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Background Images */
+.home {
+  background: url("./images/index-bg.png") no-repeat center center/cover;
+}
+
+.contact {
+  background: url("/images/contact-bg.png") no-repeat center center/cover;
+}
+
+.registration {
+  background: url("/images/registration-bg.png") no-repeat center center/cover;
+}
+
+.login {
+  background: url("/images/login-bg.png") no-repeat center center/cover;
+}
+
+/* 🔹 Buttons */
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #00d4ff, #007bff);
+  transform: scale(1.05);
+}
+
+/* 🔹 Forms */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
