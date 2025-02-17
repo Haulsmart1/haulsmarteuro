@@ -25,7 +25,7 @@ body {
 
 /* 🔹 Background Images */
 .home {
-  background: url("/images/index-bg.png") no-repeat center center/cover;
+  background: url("./images/index-bg.png") no-repeat center center/cover;
 }
 
 .contact {
