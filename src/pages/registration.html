@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for Smart Logistics Solutions and join our network.">
+    <meta name="keywords" content="register, signup, logistics, haulage, transport">
+    <meta name="author" content="HaulSmart">
+    <title>Register - Smart Logistics Solutions</title>
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body class="registration">
+    <header>
+        <h1>Create an Account</h1>
+    </header>
+
+    <div class="page">
+        <form id="registration-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <label for="company">Company Name (Optional):</label>
+            <input type="text" id="company" name="company">
+
+            <button type="submit" class="button">Register</button>
+        </form>
+
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <p><a href="index.html">Back to Home</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Smart Logistics Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Registration successful! Redirecting...');
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>
