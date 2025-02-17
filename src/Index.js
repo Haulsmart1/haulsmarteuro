@@ -1,5 +1,10 @@
 import React from "react";
-import "../css/index.css";
+import ReactDOM from "react-dom";
+import "./index.css";  
+import App from "./App";
+
+ReactDOM.render
+  <React.StrictMode>
 
 function Index() {
   return (
