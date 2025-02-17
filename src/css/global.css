@@ -55,7 +55,7 @@ nav ul li a:hover {
 }
 
 /* Index Page Background */
-.Index-page {
+.index-page {
   background: url('/images/index-bg.jpg') no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
