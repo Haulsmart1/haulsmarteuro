@@ -3,16 +3,14 @@ import "../css/login.css";
 
 function Login() {
   return (
-    <main>
-      <h1>Login</h1>
+    <div className="login-page">
+      <h1>Login to HaulSmart Euro</h1>
       <form>
-        <label>Email:</label>
-        <input type="email" required />
-        <label>Password:</label>
-        <input type="password" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
         <button type="submit">Login</button>
       </form>
-    </main>
+    </div>
   );
 }
 

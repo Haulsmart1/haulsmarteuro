@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Index from "./index";
-import Login from "./login";
-import Registration from "./registration";
-import Contact from "./contact";
+import Login from "./pages/login";  // Updated path
+import Registration from "./pages/registration";  // Updated path
+import Contact from "./pages/contact";  // Updated path
 import "./css/global.css";
 
 function App() {
@@ -28,3 +28,4 @@ function App() {
 }
 
 export default App;
+
