@@ -1,15 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("JavaScript Loaded");
-    
-    // Example: Form validation
-    let form = document.querySelector("form");
-    if (form) {
-        form.addEventListener("submit", function (event) {
-            let email = document.getElementById("email").value;
-            if (!email.includes("@")) {
-                alert("Please enter a valid email.");
-                event.preventDefault();
-            }
-        });
+document.addEventListener("DOMContentLoaded", function() {
+    const languageSelector = document.getElementById("language-selector-dropdown");
+
+    // Load stored language
+    if (localStorage.getItem("selectedLanguage")) {
+        languageSelector.value = localStorage.getItem("selectedLanguage");
     }
+
+    // Store new language
+    languageSelector.addEventListener("change", function() {
+        localStorage.setItem("selectedLanguage", this.value);
+        location.reload();
+    });
 });

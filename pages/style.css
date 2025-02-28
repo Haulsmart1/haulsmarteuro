@@ -1,0 +1,68 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Backgrounds for each page */
+.home-page {
+  background: url('/index-bg.jpg') no-repeat center center/cover;
+}
+
+.login-page {
+  background: url('/login-bg.jpg') no-repeat center center/cover;
+}
+
+.registration-page {
+  background: url('/registration-bg.jpg') no-repeat center center/cover;
+}
+
+.contact-page {
+  background: url('/contact-bg.jpg') no-repeat center center/cover;
+}
+
+/* Overlay for readability */
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 30px;
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ffcc00;
+  color: #333;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background-color: #ffdb4d;
+  transform: translateY(-2px);
+}
+
+/* Language Selector */
+.language-selector {
+  margin-top: 20px;
+}
+
+.language-selector select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
