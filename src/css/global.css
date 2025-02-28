@@ -15,7 +15,7 @@ body {
 
 /* Header Styling */
 header {
-  background: url('/index-bg.jpg') no-repeat center center/cover;
+  background: url('/images/index-bg.jpg') no-repeat center center/cover;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@ nav ul li a:hover {
 
 /* Index Page Background */
 .index-page {
-  background: url('/index-bg.jpg') no-repeat center center/cover;
+  background: url('../images/index-bg.jpg') no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@ nav ul li a:hover {
 
 /* Login Page Background */
 .Login-page {
-  background: url('/login-bg.jpg') no-repeat center center/cover;
+  background: url('../images/login-bg.jpg') no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@ nav ul li a:hover {
 
 /* Registration Page Background */
 .Registration-page {
-  background: url('/registration-bg.jpg') no-repeat center center/cover;
+  background: url('../images/registration-bg.jpg') no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -89,7 +89,7 @@ nav ul li a:hover {
 
 /* Contact Page Background */
 .Contact-page {
-  background: url('/contact-bg.jpg') no-repeat center center/cover;
+  background: url('../images/contact-bg.jpg') no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
   align-items: center;

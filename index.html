@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HaulSmart - Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/css/styles.css">
 </head>
-<body>
+<body class="background index">
     <div class="overlay">
         <h1>HaulSmart</h1>
         <p>Streamlined Logistics & Freight Exchange System</p>
         <p><strong>Official Launch: July 2025</strong></p>
 
-        <!-- Buttons -->
-        <button onclick="location.href='registration.html'">Register</button>
-        <button onclick="location.href='login.html'">Login</button>
-        <button onclick="location.href='contact.html'">Contact</button>
+        <div class="button-container">
+            <a href="registration.html" class="btn">Register</a>
+            <a href="login.html" class="btn">Login</a>
+            <a href="contact.html" class="btn">Contact</a>
+        </div>
 
         <!-- Language Selector -->
         <div class="language-selector">
-            <label for="language-selector-dropdown">🌎 Select Language:</label>
-            <select id="language-selector-dropdown">
+            <label for="language-dropdown">🌎 Select Language:</label>
+            <select id="language-dropdown">
                 <option value="en">🇬🇧 English</option>
                 <option value="fr">🇫🇷 Français</option>
                 <option value="de">🇩🇪 Deutsch</option>
@@ -30,13 +31,8 @@
             </select>
         </div>
     </div>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
 
 
 
