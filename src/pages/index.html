@@ -3,102 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HaulSmart</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>HaulSmart - Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="overlay">
+        <h1>HaulSmart</h1>
+        <p>Streamlined Logistics & Freight Exchange System</p>
+        <p><strong>Official Launch: July 2025</strong></p>
 
-    <!-- Language Selector -->
-    <div class="language-selector">
-        <select id="language-selector">
-            <option value="en">🇬🇧 English</option>
-            <option value="fr">🇫🇷 Français</option>
-            <option value="de">🇩🇪 Deutsch</option>
-            <option value="es">🇪🇸 Español</option>
-            <option value="it">🇮🇹 Italiano</option>
-            <option value="nl">🇳🇱 Nederlands</option>
-        </select>
+        <!-- Buttons -->
+        <button onclick="location.href='registration.html'">Register</button>
+        <button onclick="location.href='login.html'">Login</button>
+        <button onclick="location.href='contact.html'">Contact</button>
+
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <label for="language-selector-dropdown">🌎 Select Language:</label>
+            <select id="language-selector-dropdown">
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="it">🇮🇹 Italiano</option>
+                <option value="nl">🇳🇱 Nederlands</option>
+            </select>
+        </div>
     </div>
 
-    <!-- Hero Section -->
-    <main class="index-page">
-        <div class="hero">
-            <h1 id="title">HaulSmart</h1>
-            <h2 id="subtitle">Streamlined Logistics & Freight Exchange System</h2>
-            <p id="description">Connecting freight with reliable transport across Europe.</p>
-            
-            <!-- Buttons -->
-            <div class="button-container">
-                <a href="/registration" class="btn" id="register">Register</a>
-                <a href="/login" class="btn" id="login">Login</a>
-                <a href="/contact" class="btn" id="contact">Contact</a>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        const translations = {
-            en: {
-                title: "HaulSmart",
-                subtitle: "Streamlined Logistics & Freight Exchange System",
-                description: "Connecting freight with reliable transport across Europe.",
-                register: "Register",
-                login: "Login",
-                contact: "Contact"
-            },
-            fr: {
-                title: "HaulSmart",
-                subtitle: "Système de logistique et d'échange de fret optimisé",
-                description: "Connexion du fret avec un transport fiable à travers l'Europe.",
-                register: "S'inscrire",
-                login: "Connexion",
-                contact: "Contact"
-            },
-            de: {
-                title: "HaulSmart",
-                subtitle: "Optimiertes Logistik- und Frachtaustauschsystem",
-                description: "Verbindung von Fracht mit zuverlässigem Transport in ganz Europa.",
-                register: "Registrieren",
-                login: "Anmelden",
-                contact: "Kontakt"
-            },
-            es: {
-                title: "HaulSmart",
-                subtitle: "Sistema de logística y comercio de carga optimizado",
-                description: "Conectando carga con transporte confiable en toda Europa.",
-                register: "Registro",
-                login: "Iniciar sesión",
-                contact: "Contacto"
-            },
-            it: {
-                title: "HaulSmart",
-                subtitle: "Sistema ottimizzato di logistica e scambio merci",
-                description: "Collega il carico con trasporto affidabile in tutta Europa.",
-                register: "Registrati",
-                login: "Accedi",
-                contact: "Contatto"
-            },
-            nl: {
-                title: "HaulSmart",
-                subtitle: "Geoptimaliseerd logistiek en vrachtuitwisselingssysteem",
-                description: "Vracht verbinden met betrouwbaar transport door Europa.",
-                register: "Registreren",
-                login: "Inloggen",
-                contact: "Contact"
-            }
-        };
-
-        // Language Switcher
-        document.getElementById("language-selector").addEventListener("change", function() {
-            const lang = this.value;
-            document.getElementById("title").textContent = translations[lang].title;
-            document.getElementById("subtitle").textContent = translations[lang].subtitle;
-            document.getElementById("description").textContent = translations[lang].description;
-            document.getElementById("register").textContent = translations[lang].register;
-            document.getElementById("login").textContent = translations[lang].login;
-            document.getElementById("contact").textContent = translations[lang].contact;
-        });
-
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
+
+
+

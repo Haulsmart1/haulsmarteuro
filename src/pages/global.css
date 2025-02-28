@@ -1,121 +1,164 @@
-/* Reset some default styles */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-
-/* Apply a background image to the whole page */
-body {
+  }
+  
+  /* Page Background */
+  body {
     background-color: #f4f4f4;
-}
-
-/* Global container for centering content */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Navigation bar styles */
-nav {
-    background: #007BFF;
-    padding: 15px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Header styles */
-h1 {
-    text-align: center;
     color: #333;
-    margin-bottom: 20px;
-}
-
-/* Form styles */
-form {
+    line-height: 1.6;
+  }
+  
+  /* Header Styling */
+  header {
+    background: url('/images/index-bg.jpg') no-repeat center center/cover;
+    height: 300px;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-form input, form textarea {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 10px;
-    background-color: #28a745;
+    align-items: center;
+    justify-content: center;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-form button:hover {
-    background-color: #218838;
-}
-
-/* Page-Specific Background Images */
-.index-page {
-    background-image: url('../assets/images/index-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Navigation Bar */
+  nav {
+    background: #333;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    color: #f4b400;
+  }
+  
+  /* Index Page Background */
+  .index-page {
+    background: url('/images/index-bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-}
-
-.login-page {
-    background-image: url('../assets/images/login-bg.jpg');
-}
-
-.registration-page {
-    background-image: url('../assets/images/registration-bg.jpg');
-}
-
-.contact-page {
-    background-image: url('../assets/images/contact-bg.jpg');
-}
-
-/* Footer styles */
-footer {
+  }
+  
+  /* Login Page Background */
+  .Login-page {
+    background: url('/images/login-bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: white;
+  }
+  
+  /* Registration Page Background */
+  .Registration-page {
+    background: url('/images/registration-bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Contact Page Background */
+  .Contact-page {
+    background: url('/images/contact-bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Form Styles */
+  form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #f4b400;
+  }
+  
+  /* Footer */
+  footer {
     background: #222;
     color: white;
-    padding: 15px;
-    margin-top: 30px;
-}
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+        height: 250px;
+    }
+  
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    nav ul li {
+        margin-bottom: 10px;
+    }
+  
+    .index-page, .login-page, .registration-page, .contact-page {
+        min-height: 80vh;
+    }
+  
+    form {
+        width: 95%;
+    }
+  }
+  
