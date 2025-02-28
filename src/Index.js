@@ -1,60 +1,83 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App"; // Ensure the file is named exactly "App.js"
-import "./css/global.css";
+import React, { useState } from "react";
+import "./css/index.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-
-ReactDOM.render
-  <React.StrictMode>
+const translations = {
+  en: {
+    title: "HaulSmart",
+    subtitle: "Streamlined Logistics & Freight Exchange System",
+    description: "Connecting freight with reliable transport across Europe.",
+    register: "Register",
+    login: "Login",
+    contact: "Contact"
+  },
+  fr: {
+    title: "HaulSmart",
+    subtitle: "Système de logistique et d'échange de fret optimisé",
+    description: "Connexion du fret avec un transport fiable à travers l'Europe.",
+    register: "S'inscrire",
+    login: "Connexion",
+    contact: "Contact"
+  },
+  de: {
+    title: "HaulSmart",
+    subtitle: "Optimiertes Logistik- und Frachtaustauschsystem",
+    description: "Verbindung von Fracht mit zuverlässigem Transport in ganz Europa.",
+    register: "Registrieren",
+    login: "Anmelden",
+    contact: "Kontakt"
+  },
+  es: {
+    title: "HaulSmart",
+    subtitle: "Sistema de logística y comercio de carga optimizado",
+    description: "Conectando carga con transporte confiable en toda Europa.",
+    register: "Registro",
+    login: "Iniciar sesión",
+    contact: "Contacto"
+  },
+  it: {
+    title: "HaulSmart",
+    subtitle: "Sistema ottimizzato di logistica e scambio merci",
+    description: "Collega il carico con trasporto affidabile in tutta Europa.",
+    register: "Registrati",
+    login: "Accedi",
+    contact: "Contatto"
+  },
+  nl: {
+    title: "HaulSmart",
+    subtitle: "Geoptimaliseerd logistiek en vrachtuitwisselingssysteem",
+    description: "Vracht verbinden met betrouwbaar transport door Europa.",
+    register: "Registreren",
+    login: "Inloggen",
+    contact: "Contact"
+  }
+};
 
 function Index() {
+  const [language, setLanguage] = useState("en");
+
   return (
     <main className="index-page">
-      <h1>Welcome to HaulSmart Euro</h1>
-      <p>Your trusted partner for logistics across Europe.</p>
+      <div className="language-selector">
+        <select value={language} onChange={(e) => setLanguage(e.target.value)}>
+          <option value="en">🇬🇧 English</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="nl">🇳🇱 Nederlands</option>
+        </select>
+      </div>
 
-      <h2>🌍 We Serve All Major European Cities</h2>
-      <ul>
-        <li>London, UK</li>
-        <li>Paris, France</li>
-        <li>Berlin, Germany</li>
-        <li>Madrid, Spain</li>
-        <li>Rome, Italy</li>
-        <li>Istanbul, Turkey</li>
-        <li>Cardiff, Wales</li>
-        <li>Lisbon, Portugal</li>
-        <li>Vienna, Austria</li>
-        <li>Stockholm, Sweden</li>
-        <li>Oslo, Norway</li>
-        <li>Copenhagen, Denmark</li>
-        <li>Helsinki, Finland</li>
-        <li>Athens, Greece</li>
-        <li>Warsaw, Poland</li>
-      </ul>
-
-      <h2>🗣️ Available in Multiple Languages</h2>
-      <ul>
-        <li>🇬🇧 English</li>
-        <li>🇫🇷 French</li>
-        <li>🇩🇪 German</li>
-        <li>🇪🇸 Spanish</li>
-        <li>🇮🇹 Italian</li>
-        <li>🇳🇱 Dutch</li>
-        <li>🇸🇪 Swedish</li>
-        <li>🇵🇱 Polish</li>
-        <li>🇹🇷 Turkish</li>
-        <li>🏴 Welsh</li>
-        <li>🇵🇹 Portuguese</li>
-        <li>🇬🇷 Greek</li>
-        <li>🇳🇴 Norwegian</li>
-        <li>🇩🇰 Danish</li>
-      </ul>
+      <div className="hero">
+        <h1>{translations[language].title}</h1>
+        <h2>{translations[language].subtitle}</h2>
+        <p>{translations[language].description}</p>
+        <div className="button-container">
+          <a href="/registration" className="btn">{translations[language].register}</a>
+          <a href="/login" className="btn">{translations[language].login}</a>
+          <a href="/contact" className="btn">{translations[language].contact}</a>
+        </div>
+      </div>
     </main>
   );
 }

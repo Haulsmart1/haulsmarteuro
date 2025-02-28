@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/registration.css"; // Ensure this file exists
+import "../../css/registration.css"; // Ensure this file exists
 
 function Registration() {
     return (
