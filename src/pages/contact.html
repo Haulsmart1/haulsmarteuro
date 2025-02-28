@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HaulSmart - Contact</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/css/styles.css">
 </head>
-<body style="background-image: url('background.jpg');">
+<body class="index-bg">
     <div class="overlay">
-        <h1>Contact Us</h1>
+        <h2>Contact Us</h2>
         <p>Get in touch with our team for assistance.</p>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button>Send Message</button>
-        <button onclick="location.href='index.html'">Back to Home</button>
+        
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        
+        <a href="index.html" class="btn">Back to Home</a>
     </div>
 </body>
 </html>
-
-
 
 
