@@ -1,14 +1,12 @@
 {
-  "headers": [
+  "builds": [
     {
-      "source": "/assets/images/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store"
-        }
-      ]
+      "src": "src/index.js",
+      "use": "@vercel/node"
     }
-  ]
+  ],
+  "static": {
+    "public": "public"
+  }
 }
 

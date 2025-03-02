@@ -14,7 +14,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    background-image: url('../assets/images/login-bg.jpg'); /* Update with your actual login image path */
+    background-image: url('/assets/images/login-bg.jpg'); /* Update with your actual login image path */
   }
   
   /* Transparent Underlay for Content */

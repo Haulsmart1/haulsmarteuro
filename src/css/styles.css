@@ -19,15 +19,15 @@ body {
 }
 
 .login {
-  background-image: url('../assets/images/login-bg.jpg');
+  background-image: url('/assets/images/login-bg.jpg');
 }
 
 .registration {
-  background-image: url('../assets/images/registration-bg.jpg');
+  background-image: url('/assets/images/registration-bg.jpg');
 }
 
 .contact {
-  background-image: url('../assets/images/contact-bg.jpg');
+  background-image: url('/assets/images/contact-bg.jpg');
 }
 
 /* Container for Pages */

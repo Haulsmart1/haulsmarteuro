@@ -14,7 +14,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    background-image: url('../assets/images/index-bg.jpg'); /* Update with your actual contact image path */
+    background-image: url('/assets/images/index-bg.jpg'); /* Update with your actual contact image path */
   }
   
   /* Transparent Underlay for Content */
