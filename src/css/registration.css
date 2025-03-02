@@ -14,7 +14,7 @@ body {
     background-size: cover;
     background-position:center;
     position: relative;
-    background-image: url('/assets/images/registration-bg.jpg'); /* Update with your actual registration image path */
+    background-image: url('../assets/images/registration-bg.jpg'); /* Update with your actual registration image path */
   }
   
   /* Transparent Underlay for Content */
