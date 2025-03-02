@@ -1,77 +1,56 @@
-import React, { useState } from "react";
-import "./css/index.css";
+// index.js
+import React, { useState, useEffect } from 'react';
+import './css/styles.css';
+
+// The background image source can be changed dynamically depending on the language
+const bgImage = `${process.env.PUBLIC_URL}/images/index-bg.jpg`;
 
 const translations = {
-  en: {
-    title: "HaulSmart",
-    subtitle: "Streamlined Logistics & Freight Exchange System",
-    description: "Connecting freight with reliable transport across Europe.",
-    register: "Register",
-    login: "Login",
-    contact: "Contact"
-  },
-  fr: {
-    title: "HaulSmart",
-    subtitle: "Système de logistique et d'échange de fret optimisé",
-    description: "Connexion du fret avec un transport fiable à travers l'Europe.",
-    register: "S'inscrire",
-    login: "Connexion",
-    contact: "Contact"
-  },
-  de: {
-    title: "HaulSmart",
-    subtitle: "Optimiertes Logistik- und Frachtaustauschsystem",
-    description: "Verbindung von Fracht mit zuverlässigem Transport in ganz Europa.",
-    register: "Registrieren",
-    login: "Anmelden",
-    contact: "Kontakt"
-  },
-  es: {
-    title: "HaulSmart",
-    subtitle: "Sistema de logística y comercio de carga optimizado",
-    description: "Conectando carga con transporte confiable en toda Europa.",
-    register: "Registro",
-    login: "Iniciar sesión",
-    contact: "Contacto"
-  },
-  it: {
-    title: "HaulSmart",
-    subtitle: "Sistema ottimizzato di logistica e scambio merci",
-    description: "Collega il carico con trasporto affidabile in tutta Europa.",
-    register: "Registrati",
-    login: "Accedi",
-    contact: "Contatto"
-  },
-  nl: {
-    title: "HaulSmart",
-    subtitle: "Geoptimaliseerd logistiek en vrachtuitwisselingssysteem",
-    description: "Vracht verbinden met betrouwbaar transport door Europa.",
-    register: "Registreren",
-    login: "Inloggen",
-    contact: "Contact"
-  }
+  en: { title: "HaulSmart", subtitle: "Freight Exchange System", register: "Register", login: "Login", contact: "Contact" },
+  fr: { title: "HaulSmart", subtitle: "Système d'échange de fret", register: "S'inscrire", login: "Connexion", contact: "Contact" },
+  de: { title: "HaulSmart", subtitle: "Frachtaustauschsystem", register: "Registrieren", login: "Anmelden", contact: "Kontakt" },
+  // Add additional languages as needed
 };
 
 function Index() {
   const [language, setLanguage] = useState("en");
 
+  useEffect(() => {
+    // Load the language from localStorage if it exists
+    const savedLanguage = localStorage.getItem('lang');
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  const handleLanguageChange = (e) => {
+    const selectedLanguage = e.target.value;
+    setLanguage(selectedLanguage);
+    localStorage.setItem('lang', selectedLanguage); // Save the selected language to localStorage
+  };
+
   return (
-    <main className="index-page">
+    <main
+      className="index-page"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+      }}
+    >
       <div className="language-selector">
-        <select value={language} onChange={(e) => setLanguage(e.target.value)}>
+        <select value={language} onChange={handleLanguageChange}>
           <option value="en">🇬🇧 English</option>
           <option value="fr">🇫🇷 Français</option>
           <option value="de">🇩🇪 Deutsch</option>
-          <option value="es">🇪🇸 Español</option>
-          <option value="it">🇮🇹 Italiano</option>
-          <option value="nl">🇳🇱 Nederlands</option>
+          {/* Add other languages here */}
         </select>
       </div>
-
       <div className="hero">
         <h1>{translations[language].title}</h1>
         <h2>{translations[language].subtitle}</h2>
-        <p>{translations[language].description}</p>
         <div className="button-container">
           <a href="/registration" className="btn">{translations[language].register}</a>
           <a href="/login" className="btn">{translations[language].login}</a>
@@ -83,3 +62,5 @@ function Index() {
 }
 
 export default Index;
+
+

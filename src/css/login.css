@@ -1,89 +1,131 @@
-/* Reset some default styles */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    overflow-x: hidden;
   }
   
-  body {
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* Language Selector */
-  .language-selector {
-    margin-bottom: 20px;
-  }
-  
-  .language-selector select {
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Hero Section */
-  .index-page {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .hero h1 {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .hero h2 {
-    font-size: 24px;
-    color: #555;
-    margin-bottom: 15px;
-  }
-  
-  .hero p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 25px;
-  }
-  
-  /* Buttons */
-  .button-container {
+  .login {
+    height: 100vh;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-image: url('../assets/images/login-bg.jpg'); /* Update with your actual login image path */
+  }
+  
+  /* Transparent Underlay for Content */
+  .container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    backdrop-filter: blur(10px); /* Optional: adds blur effect to the underlay */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle box-shadow */
+    color: #f4f4f4; /* Light text color for better contrast */
+  }
+  
+  /* Text Styling */
+  #title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  #subtitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  #launch-notice {
+    font-size: 1rem;
+    color: #ffcc00; /* Yellow for emphasis */
+    margin-bottom: 2rem;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  form label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #f4f4f4;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    color: #333; /* Dark text for better readability */
+  }
+  
+  form button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
   }
   
   .btn {
-    display: inline-block;
-    text-decoration: none;
+    padding: 0.75rem 1.5rem;
     background-color: #007bff;
     color: white;
-    padding: 12px 20px;
-    font-size: 16px;
+    border: none;
     border-radius: 5px;
-    transition: background 0.3s ease-in-out;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .btn:hover {
     background-color: #0056b3;
   }
   
-  /* Mobile Responsive */
-  @media (max-width: 600px) {
-    .button-container {
-      flex-direction: column;
-    }
-    
-    .btn {
-      width: 100%;
-      text-align: center;
-    }
+  /* Back to Home Button */
+  .back-home {
+    margin-top: 1rem;
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .back-home:hover {
+    background-color: #5a6268;
   }
   

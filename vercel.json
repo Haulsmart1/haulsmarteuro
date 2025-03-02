@@ -1,5 +1,14 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/public/index.html" }
+  "headers": [
+    {
+      "source": "/assets/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
   ]
 }
+

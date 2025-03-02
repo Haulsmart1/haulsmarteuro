@@ -1,18 +1,17 @@
 {
   "name": "haulsmarteuro",
   "version": "1.0.0",
-  "description": "Logistics and Transport Services",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.29.0",
+    "react-router-dom": "^7.2.0",
     "react-scripts": "^5.0.1"
   },
   "browserslist": {
@@ -26,5 +25,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }

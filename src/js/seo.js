@@ -1,25 +1,19 @@
-// js/seo.js
-function setSEO(title, description, keywords, image) {
-    document.title = title;
+// seo.js
+import React, { useEffect } from 'react';
 
-    let metaTags = [
-        { name: "description", content: description },
-        { name: "keywords", content: keywords },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { property: "og:image", content: image },
-        { property: "og:type", content: "website" },
-        { name: "robots", content: "index, follow" }
-    ];
+function SEO({ title, description, keywords, lang }) {
+  useEffect(() => {
+    // Update meta tags for SEO purposes dynamically
+    document.title = title || 'HaulSmart - Freight Exchange'; // Set the document title dynamically
+    document.querySelector("meta[name='description']").setAttribute("content", description || "HaulSmart offers a streamlined logistics and freight exchange system.");
+    document.querySelector("meta[name='keywords']").setAttribute("content", keywords || "freight exchange, logistics, haulage, transport");
+    document.querySelector("meta[property='og:title']").setAttribute("content", title || 'HaulSmart - Freight Exchange');
+    document.querySelector("meta[property='og:description']").setAttribute("content", description || "HaulSmart offers a streamlined logistics and freight exchange system.");
+    document.querySelector("meta[property='og:image']").setAttribute("content", "https://haulsmart.com/images/index-bg.jpg");
+    document.querySelector("html").setAttribute("lang", lang || "en"); // Set the language of the page dynamically
+  }, [title, description, keywords, lang]);
 
-    metaTags.forEach(tag => {
-        let element = document.createElement("meta");
-        if (tag.name) {
-            element.name = tag.name;
-        } else {
-            element.setAttribute("property", tag.property);
-        }
-        element.content = tag.content;
-        document.head.appendChild(element);
-    });
+  return null; // This component doesn’t render anything on the page
 }
+
+export default SEO;
