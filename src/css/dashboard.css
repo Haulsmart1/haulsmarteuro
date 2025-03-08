@@ -1,0 +1,124 @@
+/* Global Styles */
+body {
+    background-image: url('./assets/images/dashboard-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Main Container */
+.container {
+    max-width: 90%;
+    width: 600px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+    color: white;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: black;
+}
+
+th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #0056b3, #003e80);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Search Input */
+.search-input {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-input:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

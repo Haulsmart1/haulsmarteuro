@@ -1,48 +1,59 @@
-// Example: Form Validation for Login and Registration
 document.addEventListener('DOMContentLoaded', function () {
-  const loginForm = document.getElementById('login-form');
-  const registrationForm = document.getElementById('registration-form');
-  const contactForm = document.getElementById('contact-form');
+    // Form references
+    const loginForm = document.getElementById('login-form');
+    const registrationForm = document.getElementById('registration-form');
+    const contactForm = document.getElementById('contact-form');
+    const languageSelector = document.getElementById('language-selector');
 
-  if (loginForm) {
-      loginForm.addEventListener('submit', function (e) {
-          const email = document.getElementById('email').value;
-          const password = document.getElementById('password').value;
+    // Language Switcher
+    document.getElementById("language-selector").addEventListener("change", function() {
+        var selectedLang = this.value;
+        alert("Switching to " + selectedLang + " (Feature to be implemented)");
+        // Future: Implement language change feature
+    });    
 
-          if (!email || !password) {
-              e.preventDefault();
-              alert('Please fill in all fields.');
-          }
-      });
-  }
+    // Login Form Validation
+    if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
 
-  if (registrationForm) {
-      registrationForm.addEventListener('submit', function (e) {
-          const fullName = document.getElementById('full-name').value;
-          const email = document.getElementById('email').value;
-          const password = document.getElementById('password').value;
-          const confirmPassword = document.getElementById('confirm-password').value;
+            if (!email || !password) {
+                e.preventDefault();
+                alert('Please fill in all fields.');
+            }
+        });
+    }
 
-          if (!fullName || !email || !password || !confirmPassword) {
-              e.preventDefault();
-              alert('Please fill in all fields.');
-          } else if (password !== confirmPassword) {
-              e.preventDefault();
-              alert('Passwords do not match.');
-          }
-      });
-  }
+    // Registration Form Validation
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', function (e) {
+            const fullName = document.getElementById('full-name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirm-password').value.trim();
 
-  if (contactForm) {
-      contactForm.addEventListener('submit', function (e) {
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const message = document.getElementById('message').value;
+            if (!fullName || !email || !password || !confirmPassword) {
+                e.preventDefault();
+                alert('Please fill in all fields.');
+            } else if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Passwords do not match.');
+            }
+        });
+    }
 
-          if (!name || !email || !message) {
-              e.preventDefault();
-              alert('Please fill in all fields.');
-          }
-      });
-  }
+    // Contact Form Validation
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                e.preventDefault();
+                alert('Please fill in all fields.');
+            }
+        });
+    }
 });
