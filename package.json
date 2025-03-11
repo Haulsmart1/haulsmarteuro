@@ -1,0 +1,19 @@
+{
+  "name": "haulsmarteuro",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "next": "^15.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "eslint-config-next": "^15.2.2"
+  }
+}
