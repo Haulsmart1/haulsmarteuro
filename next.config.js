@@ -2,6 +2,8 @@ const path = require("path");
 
 module.exports = {
   reactStrictMode: true,
+  trailingSlash: true,
+
   webpack: (config, { isServer }) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}), // Ensure it doesn’t override other aliases
@@ -12,3 +14,4 @@ module.exports = {
     return config;
   },
 };
+
