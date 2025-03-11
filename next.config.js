@@ -4,7 +4,7 @@ module.exports = {
   reactStrictMode: true,
   trailingSlash: true,
   experimental: {
-    appDir: true, // Ensures compatibility with "src/" as root
+    appDir: true, // Ensures Next.js detects src/pages/
   },
   webpack: (config) => {
     config.resolve.alias = {
@@ -14,5 +14,5 @@ module.exports = {
     };
     return config;
   },
-  pageExtensions: ["js", "jsx", "ts", "tsx"], // Ensures Next.js detects pages in src/
+  pageExtensions: ["js", "jsx", "ts", "tsx"], // Ensures Next.js detects src/pages
 };
