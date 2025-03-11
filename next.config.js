@@ -3,9 +3,7 @@ const path = require("path");
 module.exports = {
   reactStrictMode: true,
   trailingSlash: true,
-  experimental: {
-    appDir: true, // Ensures Next.js detects src/pages/
-  },
+  pageExtensions: ["js", "jsx", "ts", "tsx"], // Ensures Next.js detects pages
   webpack: (config) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
@@ -14,5 +12,4 @@ module.exports = {
     };
     return config;
   },
-  pageExtensions: ["js", "jsx", "ts", "tsx"], // Ensures Next.js detects src/pages
 };
