@@ -1,4 +1,6 @@
 {
-  "version": 2,
-  "public": "public"
+  "builds": [
+    { "src": "package.json", "use": "@vercel/next" }
+  ]
 }
+
