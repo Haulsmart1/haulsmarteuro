@@ -6,3 +6,9 @@ node_modules
 node_modules
 node_modules
 node_modules
+EMAIL_HOST=smtp.ionos.co.uk
+EMAIL_PORT=465
+EMAIL_USER=help@haul-smart.com
+EMAIL_PASS=Telephone1409!
+EMAIL_TO=help@haul-smart.com
+
