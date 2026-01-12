@@ -1,0 +1,338 @@
+/* === Language Switcher === */
+.languageSwitcher {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.languageLabel {
+  font-size: 1.2rem;
+}
+
+.languageSwitcher select {
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  outline: none;
+  appearance: none;
+  padding-right: 20px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='12' height='8' viewBox='0 0 12 8' fill='white' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='white' stroke-width='2'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+.languageSwitcher option {
+  color: #000;
+  background-color: #fff;
+}
+
+/* === Hero Section === */
+.hero {
+  background: url('/assets/images/index-bg.jpg') center center / cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* === Overlay === */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2.5rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 850px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: slideIn 0.8s ease-out both;
+}
+
+/* === Content Box === */
+.contentBox {
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.contentBox h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contentBox h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contentBox h3 {
+  font-size: 1.4rem;
+  margin-top: 1.8rem;
+}
+
+.contentBox p {
+  font-size: 1.125rem;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+/* === List Styling === */
+.contentBox ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.contentBox ul li {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.contentBox ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* === Button Groups === */
+.btnGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.primary {
+  background-color: #0070f3;
+  color: white;
+}
+
+.primary:hover {
+  background-color: #005ad3;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid #ffcc00;
+  color: #ffcc00;
+}
+
+.secondary:hover {
+  background-color: #ffcc00;
+  color: black;
+  box-shadow: 0 0 8px #ffcc00aa;
+}
+
+/* === City Section === */
+.citySection {
+  margin-top: 20px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.cityTitle {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.cityGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 16px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0 10px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.cityGrid span {
+  white-space: nowrap;
+}
+
+/* === SEO Text === */
+.seoText {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 20px;
+  padding: 0 12px;
+  line-height: 1.6;
+}
+
+/* === City Links === */
+.cityLink {
+  display: inline-block;
+  margin: 4px 8px;
+  color: #fff;
+  text-decoration: underline;
+  transition: 0.2s ease;
+}
+
+.cityLink:hover {
+  color: #FFD700;
+}
+
+/* === Resources Section === */
+.resourcesSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1.5rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.resourcesColumn {
+  min-width: 250px;
+  flex: 1 1 45%;
+  scroll-snap-align: start;
+}
+
+.resourcesColumn h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #34D399;
+}
+
+.resourcesColumn ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resourcesColumn li {
+  margin: 0.4rem 0;
+}
+
+.resourcesColumn a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.resourcesColumn a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* === Registry Slider === */
+.registrySlider {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.registryCard {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.registryCard h4 {
+  font-size: 1.2rem;
+  color: #34D399;
+  margin-bottom: 0.75rem;
+}
+
+.registryCard ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.registryCard li {
+  margin: 0.4rem 0;
+}
+
+.registryCard a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.registryCard a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .btnGroup {
+    flex-direction: column;
+  }
+
+  .contentBox h1 {
+    font-size: 2rem;
+  }
+
+  .contentBox p,
+  .cityGrid {
+    font-size: 0.95rem;
+  }
+
+  .registryCard {
+    flex: 0 0 85%;
+  }
+}
