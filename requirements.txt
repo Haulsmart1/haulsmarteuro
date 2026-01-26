@@ -8,4 +8,4 @@ langchain-community==0.4.1
 langchain-openai==1.1.7
 pydantic==2.12.5
 tiktoken==0.12.0
-faiss-cpu==1.13.2  # ✅ updated to valid version
+faiss-cpu==1.13.2
