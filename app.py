@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 import os
 import json
 
-# ✅ LangChain Imports (correct for v1.2.7+)
+# ✅ LangChain Imports (valid for v1.2.7)
 from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
-from langchain_community.chains import RetrievalQA  # ✅ CORRECTED import!
+from langchain.chains import RetrievalQA  # ✅ Correct import
 
 # ✅ Load environment variables
 load_dotenv(dotenv_path=".env")
@@ -39,12 +39,12 @@ qa_chain = RetrievalQA.from_chain_type(
     retriever=vectorstore.as_retriever()
 )
 
-# ✅ FastAPI
+# ✅ FastAPI setup
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Or your frontend URL
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
