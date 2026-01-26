@@ -34,14 +34,16 @@ qa_chain = RetrievalQA.from_chain_type(
 # ✅ Setup FastAPI app
 app = FastAPI()
 
-# ✅ CORS settings (including your frontend domains)
+# ✅ CORS settings — All frontend domains listed here
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://haulsmart-europe.vercel.app",
         "https://haulsmart-europe.com",
         "https://www.haulsmart-europe.com",
+        "https://haulsmarteuro.vercel.app",
+        "https://eurofreight.exchange",
+        "https://globalfreight.exchange"
     ],
     allow_credentials=True,
     allow_methods=["*"],
