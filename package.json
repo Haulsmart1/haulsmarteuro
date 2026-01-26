@@ -1,25 +1,31 @@
 {
   "name": "haulsmarteuro",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run sitemap && next build && npm run prewarm-ai",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --ext .js,.jsx --fix",
-    "cleanup": "node scripts/cleanupUsers.js"
+    "cleanup": "node scripts/cleanupUsers.js",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "prewarm-ai": "node scripts/prewarmShipperContent.mjs",
+    "build-ai-content": "node scripts/buildCityContent.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
+    "@hookform/resolvers": "^5.1.1",
     "@supabase/auth-helpers-nextjs": "^0.10.0",
     "@supabase/supabase-js": "^2.50.0",
-    "ai": "^3.1.10",
+    "ai": "^6.0.5",
     "axios": "^1.8.3",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.9",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
-    "dotenv": "^16.5.0",
+    "dotenv": "^16.6.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "geolib": "^3.3.4",
     "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.10.3",
@@ -27,7 +33,8 @@
     "jspdf-autotable": "^5.0.2",
     "leaflet": "^1.9.4",
     "mapbox-gl": "^3.12.0",
-    "nodemailer": "^6.10.0",
+    "next-sitemap": "^4.2.3",
+    "nodemailer": "^7.0.12",
     "openai": "^4.104.0",
     "papaparse": "^5.5.3",
     "qrcode.react": "^4.2.0",
@@ -36,15 +43,19 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.56.4",
     "react-leaflet": "^4.2.1",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "zod": "^3.25.64"
   },
   "devDependencies": {
+    "dotenv-cli": "^11.0.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^15.3.3",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "next": "^15.3.3",
+    "next": "^16.1.4",
     "npm-force-resolutions": "^0.0.10",
-    "postcss-preset-env": "^10.2.2"
+    "postcss-preset-env": "^10.2.2",
+    "typescript": "^5.9.3"
   }
 }
