@@ -7,7 +7,7 @@ import styles from "../styles/pages/auth.module.css";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [mode, setMode] = useState("login");
+  const [mode, setMode] = useState(router.pathname === "/register" || router.query.mode === "register" ? "register" : "login");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +18,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (router.query.mode === "register") setMode("register");
+    if (router.pathname === "/register" || router.query.mode === "register") setMode("register");
     if (router.query.verified === "1") setMessage("Email confirmed. Sign in to continue.");
     const supabase = getSupabaseClient();
     if (!supabase) return undefined;
@@ -73,8 +73,8 @@ export default function LoginPage() {
       <section className={styles.card} aria-labelledby="auth-title">
         <Link className={styles.brand} href="/"><span className={styles.brandMark} aria-hidden="true">H</span><span>HaulSmart <small>EUROPE</small></span></Link>
         {!recovery && <div className={styles.tabs} role="tablist" aria-label="Account access">
-          <button role="tab" aria-selected={!registering} className={!registering ? styles.activeTab : ""} onClick={() => { setMode("login"); setMessage(""); setError(""); }} type="button">Sign in</button>
-          <button role="tab" aria-selected={registering} className={registering ? styles.activeTab : ""} onClick={() => { setMode("register"); setMessage(""); setError(""); }} type="button">Create account</button>
+          <button role="tab" aria-selected={!registering} className={!registering ? styles.activeTab : ""} onClick={() => { setMode("login"); setMessage(""); setError(""); router.replace("/login"); }} type="button">Sign in</button>
+          <button role="tab" aria-selected={registering} className={registering ? styles.activeTab : ""} onClick={() => { setMode("register"); setMessage(""); setError(""); router.replace("/register"); }} type="button">Create account</button>
         </div>}
         <p className={styles.eyebrow}>{recovery ? "ACCOUNT RECOVERY" : registering ? "GET STARTED" : "YOUR TRANSPORT ACCOUNT"}</p>
         <h1 id="auth-title">{recovery ? "Choose a new password" : registering ? "Create your account" : "Welcome back"}</h1>

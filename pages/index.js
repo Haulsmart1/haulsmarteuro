@@ -24,7 +24,7 @@ export default function Home() {
         <Link href="/" className={styles.brand} aria-label="HaulSmart Europe home"><span className={styles.brandMark} aria-hidden="true">H</span><span>HaulSmart <small>EUROPE</small></span></Link>
         <nav className={styles.nav} aria-label="Main navigation">
           <Link href="/login" className={styles.navLink}>Sign in</Link>
-          <Link href="/login?mode=register" className={styles.navButton}>Create account</Link>
+          <Link href="/register" className={styles.navButton}>Create account</Link>
         </nav>
       </header>
       <section className={styles.hero}>
@@ -32,7 +32,7 @@ export default function Home() {
           <p className={styles.eyebrow}>UK &amp; EUROPEAN TRANSPORT</p>
           <h1>Freight, made clearer.</h1>
           <p className={styles.lede}>A straightforward place for carriers and shippers to get started with HaulSmart Europe.</p>
-          <div className={styles.actions}><Link href="/login?mode=register" className={styles.primaryButton}>Create an account</Link><Link href="/login" className={styles.secondaryButton}>Sign in</Link></div>
+          <div className={styles.actions}><Link href="/register" className={styles.primaryButton}>Create an account</Link><Link href="/login" className={styles.secondaryButton}>Sign in</Link></div>
           <p className={styles.helper}>Already have an account? <Link href="/login">Sign in here</Link>.</p>
         </div>
         <div className={styles.heroVisual} role="img" aria-label="A freight vehicle on the road">
@@ -44,7 +44,7 @@ export default function Home() {
         <div className={styles.sectionHeading}><p className={styles.eyebrow}>A BETTER STARTING POINT</p><h2 id="benefits-title">Everything begins with a clear account.</h2></div>
         <div className={styles.benefitGrid}>{benefits.map(([number,title,body]) => <article className={styles.benefitCard} key={number}><span className={styles.benefitNumber}>{number}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
       </section>
-      <footer className={styles.footer}><Link href="/" className={styles.footerBrand}>HaulSmart Europe</Link><div className={styles.footerLinks}><Link href="/login">Sign in</Link><Link href="/login?mode=register">Create account</Link></div><span>UK &amp; European transport</span></footer>
+      <footer className={styles.footer}><Link href="/" className={styles.footerBrand}>HaulSmart Europe</Link><div className={styles.footerLinks}><Link href="/login">Sign in</Link><Link href="/register">Create account</Link></div><span>UK &amp; European transport</span></footer>
     </main>
   </>;
 }
