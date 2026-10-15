@@ -1,0 +1,32 @@
+.page { min-height:100vh; display:grid; grid-template-columns:minmax(360px,520px) minmax(280px,1fr); align-items:center; gap:clamp(32px,7vw,112px); padding:clamp(24px,7vw,88px); color:#172238; background:radial-gradient(ellipse at 78% 18%,rgba(36,88,130,.22),transparent 38%),linear-gradient(135deg,#f5f7fa,#e6edf3); }
+.card { width:100%; max-width:500px; padding:clamp(28px,4vw,48px); border:1px solid rgba(23,34,56,.09); border-radius:24px; background:rgba(255,255,255,.96); box-shadow:0 28px 75px rgba(24,40,61,.14); }
+.brand { display:inline-flex; align-items:center; gap:12px; color:#142239; font-size:18px; font-weight:800; letter-spacing:-.04em; text-decoration:none; }
+.brand small { display:block; margin-top:2px; color:#69788a; font-size:9px; font-weight:700; letter-spacing:.2em; }
+.brandMark { width:40px; height:40px; display:grid; place-items:center; border-radius:12px; background:#d92334; color:#fff; font-size:22px; font-weight:800; }
+.tabs { display:flex; gap:4px; margin:32px 0 24px; padding:4px; border-radius:10px; background:#eef2f6; }
+.tabs button { flex:1; min-height:40px; border:0; border-radius:7px; background:transparent; color:#68778a; cursor:pointer; font:inherit; font-size:13px; font-weight:700; }
+.tabs .activeTab { background:#fff; color:#192b42; box-shadow:0 2px 8px rgba(20,34,56,.09); }
+.eyebrow,.sideLabel { margin:20px 0 10px; color:#bd2637; font-size:11px; font-weight:800; letter-spacing:.17em; }
+.card h1 { margin:0; color:#13223a; font-size:clamp(30px,4vw,42px); line-height:1.08; letter-spacing:-.045em; }
+.intro { margin:14px 0 26px; color:#657284; font-size:15px; line-height:1.65; }
+.form { display:grid; gap:18px; }
+.field { display:grid; gap:8px; color:#27364c; font-size:13px; font-weight:700; }
+.field input { width:100%; min-height:48px; box-sizing:border-box; padding:12px 14px; border:1px solid #d8dee7; border-radius:10px; background:#fbfcfd; color:#172238; font:inherit; font-weight:500; outline:none; }
+.field input:focus { border-color:#356c98; box-shadow:0 0 0 3px rgba(53,108,152,.14); }
+.field small { color:#778495; font-size:12px; font-weight:400; }
+.primaryButton { min-height:50px; border:0; border-radius:10px; background:#d92334; color:#fff; cursor:pointer; font:inherit; font-weight:800; }
+.primaryButton:hover:not(:disabled) { background:#b91f2e; }
+.primaryButton:disabled { cursor:wait; opacity:.68; }
+.error,.notice { margin:0; padding:12px 14px; border-radius:10px; font-size:13px; line-height:1.5; }
+.error { background:#fff0f1; color:#a31625; }.notice { background:#edf7f1; color:#215a3a; }
+.textButton { margin-top:18px; padding:0; border:0; background:none; color:#1f587c; cursor:pointer; font:inherit; font-size:13px; font-weight:700; }
+.textButton:disabled { cursor:not-allowed; opacity:.5; }
+.backLink { display:inline-block; margin-top:28px; color:#647287; font-size:13px; text-decoration:none; }
+.backLink:hover { color:#172238; text-decoration:underline; }
+.sidePanel { max-width:470px; color:#fff; }.sidePanel .sideLabel { margin-top:0; color:#f08a93; }
+.sidePanel h2 { margin:0; font-size:clamp(32px,5vw,56px); line-height:1.04; letter-spacing:-.05em; }
+.sidePanel>p:not(.sideLabel) { max-width:400px; color:#d0d8e1; line-height:1.7; }
+.sideRule { width:58px; height:3px; margin:34px 0 18px; background:#d92334; }
+.sidePanel .sideFoot { font-size:12px; }.accountNote { margin:22px 0; padding:16px; border:1px solid #dce4eb; border-radius:12px; background:#f5f8fa; color:#546376; font-size:14px; line-height:1.6; }
+@media(max-width:860px) { .page { grid-template-columns:minmax(0,1fr); justify-items:center; }.sidePanel { display:none; } }
+@media(max-width:520px) { .page { padding:18px; }.card { padding:26px 22px; border-radius:18px; } }
