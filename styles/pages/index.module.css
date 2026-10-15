@@ -15,7 +15,7 @@
 .secondaryButton { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 22px; border:1px solid #c9d1db; border-radius:9px; color:#23354c; font-size:14px; font-weight:800; text-decoration:none; }
 .secondaryButton:hover { border-color:#263d58; background:#fff; }
 .helper { margin:20px 0 0; color:#6e7c8e; font-size:13px; }.helper a { color:#1e5b82; font-weight:700; text-decoration:none; }
-.heroVisual { position:relative; min-height:430px; overflow:hidden; border-radius:26px; background:linear-gradient(180deg,rgba(12,27,44,.02) 30%,rgba(12,27,44,.75) 100%),url("/assets/images/index-bg.jpg") center/cover no-repeat,linear-gradient(130deg,#34556d,#142238); box-shadow:0 25px 70px rgba(22,38,57,.22); }
+.heroVisual { position:relative; min-height:430px; overflow:hidden; border-radius:26px; background:radial-gradient(circle at 79% 20%,rgba(227,76,93,.4),transparent 24%),linear-gradient(180deg,rgba(12,27,44,.08) 30%,rgba(12,27,44,.76) 100%),linear-gradient(130deg,#6c8798 0%,#29495f 44%,#142238 100%); box-shadow:0 25px 70px rgba(22,38,57,.22); }
 .visualTag { position:absolute; top:20px; left:20px; display:inline-flex; align-items:center; gap:9px; padding:11px 14px; border:1px solid rgba(255,255,255,.26); border-radius:100px; background:rgba(17,30,44,.58); color:#fff; font-size:12px; font-weight:700; backdrop-filter:blur(12px); }
 .statusDot { width:8px; height:8px; border-radius:50%; background:#e54a59; }.visualCaption { position:absolute; right:28px; bottom:30px; left:28px; color:#fff; }
 .visualCaption span { display:block; margin-bottom:10px; color:#f1a2aa; font-size:10px; font-weight:800; letter-spacing:.19em; }.visualCaption strong { font-size:clamp(24px,3vw,38px); letter-spacing:-.04em; }

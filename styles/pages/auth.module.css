@@ -23,7 +23,7 @@
 .textButton:disabled { cursor:not-allowed; opacity:.5; }
 .backLink { display:inline-block; margin-top:28px; color:#647287; font-size:13px; text-decoration:none; }
 .backLink:hover { color:#172238; text-decoration:underline; }
-.sidePanel { max-width:470px; color:#fff; }.sidePanel .sideLabel { margin-top:0; color:#f08a93; }
+.sidePanel { box-sizing:border-box; width:100%; max-width:470px; padding:clamp(28px,4vw,48px); border-radius:24px; color:#fff; background:linear-gradient(145deg,#17324e,#101d30); box-shadow:0 24px 64px rgba(10,20,35,.24); }.sidePanel .sideLabel { margin-top:0; color:#f08a93; }
 .sidePanel h2 { margin:0; font-size:clamp(32px,5vw,56px); line-height:1.04; letter-spacing:-.05em; }
 .sidePanel>p:not(.sideLabel) { max-width:400px; color:#d0d8e1; line-height:1.7; }
 .sideRule { width:58px; height:3px; margin:34px 0 18px; background:#d92334; }
