@@ -1,14 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // ✅ Crucial for SSR and dynamic routes on Vercel
-
-  env: {
-    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
-  },
-
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  output: "standalone",
+  reactStrictMode: true,
+  trailingSlash: true,
+  pageExtensions: ["js", "jsx", "ts", "tsx"],
 };
 
 export default nextConfig;
