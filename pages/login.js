@@ -2,7 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { getSupabaseClient, AUTH_RETURN_URL } from "../lib/supabaseClient";
+import { getSupabaseClient } from "../lib/supabaseClient";
+import { getAuthReturnUrl } from "../lib/authReturn";
 import styles from "../styles/pages/auth.module.css";
 
 export default function LoginPage() {
@@ -49,7 +50,7 @@ export default function LoginPage() {
       const { error: authError } = await supabase.auth.signInWithOtp({
         email: email.trim(),
         options: {
-          emailRedirectTo: AUTH_RETURN_URL,
+          emailRedirectTo: getAuthReturnUrl(window.location.origin),
           shouldCreateUser: mode === "register",
           ...(mode === "register" ? { data: { full_name: name.trim() } } : {}),
         },
