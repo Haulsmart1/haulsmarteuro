@@ -9,7 +9,7 @@ import styles from "../styles/pages/auth.module.css";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [mode, setMode] = useState(router.pathname === "/register" || router.query.mode === "register" ? "register" : "login");
+  const mode = router.pathname === "/register" || router.query.mode === "register" ? "register" : "login";
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [busy, setBusy] = useState(false);
@@ -17,8 +17,6 @@ export default function LoginPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (router.pathname === "/register" || router.query.mode === "register") setMode("register");
-
     const supabase = getSupabaseClient();
     if (!supabase) return undefined;
 
