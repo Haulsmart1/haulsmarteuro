@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "../lib/supabaseClient";
 import { getAuthReturnUrl } from "../lib/authReturn";
+import { observeLoginSession } from "../lib/loginSession";
 import styles from "../styles/pages/auth.module.css";
 
 export default function LoginPage() {
@@ -21,16 +22,10 @@ export default function LoginPage() {
     const supabase = getSupabaseClient();
     if (!supabase) return undefined;
 
-    const { data } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN" && session?.user) void router.replace("/portal");
+    return observeLoginSession(supabase.auth, {
+      onSignedIn: () => { void router.replace("/portal"); },
+      onError: () => setError("We couldn’t check your sign-in. Please try again."),
     });
-
-    supabase.auth.getSession().then(({ data: sessionData, error: sessionError }) => {
-      if (sessionError) setError("We couldn’t check your sign-in. Please try again.");
-      if (sessionData.session?.user) void router.replace("/portal");
-    });
-
-    return () => data.subscription.unsubscribe();
   }, [router, router.pathname, router.query.mode]);
 
   async function submit(event) {
