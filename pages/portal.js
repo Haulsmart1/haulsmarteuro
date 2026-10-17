@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "../lib/supabaseClient";
-import { readPortalData } from "../lib/portalData";
+import { readPortalData, signOutPortalAccount } from "../lib/portalData";
 import styles from "../styles/pages/portal.module.css";
 
 const tabs = ["Overview", "My loads", "Fleet", "Invoices", "Account"];
@@ -41,8 +41,9 @@ export default function PortalPage() {
     return () => { active = false; listener.subscription.unsubscribe(); };
   }, [router, refresh]);
   async function signOut() {
-    const { error: failure } = await getSupabaseClient().auth.signOut();
-    if (failure) setError("Sign out failed. Please try again.");
+    setError("");
+    const succeeded = await signOutPortalAccount(getSupabaseClient());
+    if (!succeeded) setError("Sign out failed. You may still be signed in. Please try again.");
   }
   function records(key, render) {
     if (loading) return <p role="status">Loading your records…</p>;
