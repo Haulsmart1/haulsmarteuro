@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "../lib/supabaseClient";
 import { readPortalData, signOutPortalAccount } from "../lib/portalData";
-import { checkPortalIdentity } from "../lib/portalIdentity";
+import { checkPortalIdentity, handlePortalAuthChange } from "../lib/portalIdentity";
 import styles from "../styles/pages/portal.module.css";
 
 const tabs = ["Overview", "My loads", "Fleet", "Invoices", "Account"];
@@ -37,8 +37,12 @@ export default function PortalPage() {
     }
     load();
     const { data: listener } = client.auth.onAuthStateChange((event) => {
-      if (event === "SIGNED_OUT") { active = false; setUser(null); setData(null); router.replace("/login"); }
-      if (event === "SIGNED_IN" || event === "USER_UPDATED") setRefresh((value) => value + 1);
+      handlePortalAuthChange(event, {
+        invalidate: () => { active = false; },
+        clear: () => { setUser(null); setData(null); setSearch(""); setError(""); setLoading(true); },
+        recheck: () => setRefresh((value) => value + 1),
+        signIn: () => router.replace("/login"),
+      });
     });
     return () => { active = false; listener.subscription.unsubscribe(); };
   }, [router, refresh]);
