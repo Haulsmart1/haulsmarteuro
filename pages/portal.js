@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "../lib/supabaseClient";
 import { readPortalData, signOutPortalAccount } from "../lib/portalData";
+import { checkPortalIdentity } from "../lib/portalIdentity";
 import styles from "../styles/pages/portal.module.css";
 
 const tabs = ["Overview", "My loads", "Fleet", "Invoices", "Account"];
@@ -22,11 +23,12 @@ export default function PortalPage() {
     let active = true;
     if (!client) { setError("Account access is not configured for this deployment."); setLoading(false); return; }
     async function load() {
-      setLoading(true); setData(null); setError("");
+      setLoading(true); setUser(null); setData(null); setError("");
       try {
-        const { data: identity, error: failure } = await client.auth.getUser();
+        const identity = await checkPortalIdentity(client.auth);
         if (!active) return;
-        if (failure || !identity.user) { setUser(null); router.replace("/login"); return; }
+        if (identity.status === "missing") { router.replace("/login"); return; }
+        if (identity.status === "retry") { setError("We could not verify your account connection. Check your connection and try again."); return; }
         setUser(identity.user);
         const result = await readPortalData(client, identity.user.id);
         if (active) setData(result);
@@ -55,7 +57,7 @@ export default function PortalPage() {
   return <><Head><title>Your workspace | HaulSmart Europe</title><meta name="robots" content="noindex,nofollow" /></Head>
     <main className={styles.page}><header className={styles.header}><Link href="/" className={styles.brand}>HaulSmart <small>EUROPE</small></Link>{user && <button type="button" onClick={signOut}>Sign out</button>}</header>
       {error && <p role="alert" className={styles.panel}>{error}</p>}
-      {!user ? <p role="status">{loading ? "Checking your account…" : "Sign in to open your workspace."}</p> : <div className={styles.workspace}>
+      {!user ? <section className={styles.panel}><p role="status">{loading ? "Checking your account…" : error ? "Your records stay hidden until your account can be verified." : "Sign in to open your workspace."}</p>{!loading && <><button type="button" onClick={() => setRefresh((value) => value + 1)}>Retry account check</button>{" "}<Link href="/login">Go to sign in</Link></>}</section> : <div className={styles.workspace}>
         <nav className={styles.nav} aria-label="Workspace">{tabs.map((item) => <button type="button" key={item} aria-current={tab === item ? "page" : undefined} onClick={() => setTab(item)}>{item}</button>)}</nav>
         <div className={styles.content}><p className={styles.eyebrow}>YOUR TRANSPORT WORKSPACE</p><h1>{tab === "Overview" ? "Welcome aboard" : tab}</h1><p>{profile?.company_name || user.email}</p><button type="button" disabled={loading} onClick={() => setRefresh((value) => value + 1)}>Refresh records</button>
           {tab === "Overview" && <><div className={styles.stats}>{[["loads", "My loads"], ["vehicles", "Fleet"], ["invoices", "Invoices"]].map(([key, label]) => <button type="button" key={key} onClick={() => setTab(label)}><span>{label}</span><strong>{loading ? "…" : data && !data[key].error ? `${data[key].rows.length}${data[key].rows.length === 100 ? "+" : ""}` : "Unavailable"}</strong><small>Visible records →</small></button>)}</div><section className={styles.panel}><h2>Your next steps</h2><p>Review your loads, fleet and invoices in one place. This workspace currently supports viewing your records.</p><button type="button" onClick={() => setTab("My loads")}>View my loads</button></section><section className={styles.panel}><h2>Payments</h2><p>Online payment and subscription activation are not enabled here. No payment is taken in this workspace.</p></section></>}
