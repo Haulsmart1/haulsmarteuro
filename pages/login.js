@@ -22,7 +22,9 @@ export default function LoginPage() {
 
     return observeLoginSession(supabase.auth, {
       onSignedIn: () => { void router.replace("/portal"); },
-      onError: () => setError("We couldn’t check your sign-in. Please try again."),
+      onError: (kind) => setError(kind === "invalid_link"
+        ? "That sign-in link is invalid or has expired. Enter your email below to request a new link."
+        : "We couldn’t check your sign-in. Please try again."),
     });
   }, [router, router.pathname, router.query.mode]);
 
