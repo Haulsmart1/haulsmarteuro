@@ -2,12 +2,14 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { getSupabaseClient, AUTH_RETURN_URL } from "../lib/supabaseClient";
+import { getSupabaseClient } from "../lib/supabaseClient";
+import { getAuthReturnUrl } from "../lib/authReturn";
+import { observeLoginSession } from "../lib/loginSession";
 import styles from "../styles/pages/auth.module.css";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [mode, setMode] = useState(router.pathname === "/register" || router.query.mode === "register" ? "register" : "login");
+  const mode = router.pathname === "/register" || router.query.mode === "register" ? "register" : "login";
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [busy, setBusy] = useState(false);
@@ -15,21 +17,15 @@ export default function LoginPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (router.pathname === "/register" || router.query.mode === "register") setMode("register");
-
     const supabase = getSupabaseClient();
     if (!supabase) return undefined;
 
-    const { data } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN" && session?.user) void router.replace("/portal");
+    return observeLoginSession(supabase.auth, {
+      onSignedIn: () => { void router.replace("/portal"); },
+      onError: (kind) => setError(kind === "invalid_link"
+        ? "That sign-in link is invalid or has expired. Enter your email below to request a new link."
+        : "We couldn’t check your sign-in. Please try again."),
     });
-
-    supabase.auth.getSession().then(({ data: sessionData, error: sessionError }) => {
-      if (sessionError) setError("We couldn’t check your sign-in. Please try again.");
-      if (sessionData.session?.user) void router.replace("/portal");
-    });
-
-    return () => data.subscription.unsubscribe();
   }, [router, router.pathname, router.query.mode]);
 
   async function submit(event) {
@@ -49,7 +45,7 @@ export default function LoginPage() {
       const { error: authError } = await supabase.auth.signInWithOtp({
         email: email.trim(),
         options: {
-          emailRedirectTo: AUTH_RETURN_URL,
+          emailRedirectTo: getAuthReturnUrl(window.location.origin),
           shouldCreateUser: mode === "register",
           ...(mode === "register" ? { data: { full_name: name.trim() } } : {}),
         },

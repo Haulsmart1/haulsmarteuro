@@ -1,25 +1,15 @@
-// /pages/api/ask.js
-import OpenAI from "openai";
+// AI requests stay closed until verified account entitlements and usage limits
+// are implemented. Do not instantiate a paid provider from this public route.
+export const config = { api: { bodyParser: false } };
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-export default async function handler(req, res) {
-    try {
-        const { prompt } = req.body;
-
-        if (!prompt) {
-            return res.status(400).json({ error: "Missing prompt" });
-        }
-
-        const response = await openai.chat.completions.create({
-            model: "gpt-4",
-            messages: [{ role: "user", content: prompt }],
-        });
-
-        const aiResponse = response.choices[0]?.message?.content;
-        res.status(200).json({ result: aiResponse });
-    } catch (error) {
-        console.error("OpenAI error:", error);
-        res.status(500).json({ error: "Something went wrong with OpenAI" });
-    }
+export default function handler(req, res) {
+  res.setHeader("Cache-Control", "no-store");
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "POST");
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+  return res.status(503).json({
+    error: "AI assistance is not available yet.",
+    code: "AI_NOT_ENABLED",
+  });
 }
