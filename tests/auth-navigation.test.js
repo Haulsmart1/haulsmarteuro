@@ -6,7 +6,7 @@ import ts from "typescript";
 
 // Execute the real shared page and its submit handler with React's state/effect
 // semantics retained across navigation. Auth and framework I/O stay synthetic.
-function fixture(pathname, query = {}) {
+function fixture(pathname, query = {}, observe) {
   const router = { pathname, query };
   const states = [], effects = [], requests = [];
   let cursor = 0, dirty = false, pending = [], tree;
@@ -40,7 +40,7 @@ function fixture(pathname, query = {}) {
       signInWithOtp: async (request) => { requests.push(request); return { error: null }; },
     } }) },
     "../lib/authReturn": { getAuthReturnUrl: (origin) => `${origin}/login` },
-    "../lib/loginSession": { observeLoginSession: () => () => {} },
+    "../lib/loginSession": { observeLoginSession: (auth, callbacks) => { observe?.(callbacks); return () => {}; } },
     "../styles/pages/auth.module.css": { default: {} },
   };
   const source = readFileSync(new URL("../pages/login.js", import.meta.url), "utf8");
@@ -70,6 +70,7 @@ function fixture(pathname, query = {}) {
   render();
   return {
     requests,
+    alert() { return find(tree, (node) => node.props?.role === "alert")?.props.children; },
     go(path, nextQuery = {}) { router.pathname = path; router.query = nextQuery; render(); },
     async submit() {
       find(tree, (node) => node.type === "input" && node.props.type === "email")
@@ -108,4 +109,9 @@ test("initial login keeps account creation disabled", async () => {
   const page = fixture("/login");
   await page.submit();
   assert.equal(page.requests[0].options.shouldCreateUser, false);
+});
+
+test("invalid callback feedback explains how to obtain a new email link", () => {
+  const page = fixture("/login", {}, ({ onError }) => onError("invalid_link"));
+  assert.equal(page.alert(), "That sign-in link is invalid or has expired. Enter your email below to request a new link.");
 });
