@@ -1,29 +1,87 @@
-.site { min-height:100vh; overflow:hidden; color:#142238; background:#f5f7f9; }
+.site { min-height:100vh; overflow-x:clip; color:#142238; background:#f5f7f9; font-family:Arial,Helvetica,sans-serif; }
 .header { width:min(1200px,calc(100% - 56px)); min-height:88px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(20,34,56,.1); }
-.brand { display:inline-flex; align-items:center; gap:12px; color:#142238; font-size:18px; font-weight:800; letter-spacing:-.04em; text-decoration:none; }
+.brand { display:inline-flex; min-width:0; align-items:center; gap:12px; color:#142238; font-size:18px; font-weight:800; letter-spacing:-.04em; text-decoration:none; }
 .brand small { display:block; margin-top:2px; color:#69788a; font-size:9px; font-weight:700; letter-spacing:.2em; }
 .brandMark { display:grid; place-items:center; width:42px; height:42px; border-radius:12px; background:#d92334; color:#fff; font-size:23px; font-weight:800; }
-.nav { display:flex; align-items:center; gap:24px; }.navLink { color:#34445a; font-size:14px; font-weight:700; text-decoration:none; }
+.nav { display:flex; min-width:0; align-items:center; gap:24px; }
+.navLink { min-width:0; overflow-wrap:anywhere; color:#34445a; font-size:14px; font-weight:700; text-decoration:none; }
 .navLink:hover,.helper a:hover,.footerLinks a:hover { color:#c51f30; }
 .navButton,.primaryButton { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 20px; border-radius:9px; background:#d92334; color:#fff; font-size:14px; font-weight:800; text-decoration:none; }
 .navButton:hover,.primaryButton:hover { background:#b91f2e; color:#fff; }
 .hero { width:min(1200px,calc(100% - 56px)); min-height:570px; margin:0 auto; display:grid; grid-template-columns:minmax(0,.86fr) minmax(420px,1.14fr); align-items:center; gap:clamp(36px,7vw,96px); padding:64px 0 82px; }
-.heroCopy { max-width:510px; }.eyebrow { margin:0 0 18px; color:#bd2637; font-size:11px; font-weight:800; letter-spacing:.18em; }
+.heroCopy { min-width:0; max-width:510px; overflow-wrap:anywhere; }
+.eyebrow { margin:0 0 18px; color:#bd2637; font-size:11px; font-weight:800; letter-spacing:.18em; }
 .hero h1 { max-width:540px; margin:0; color:#15243a; font-size:clamp(46px,6.3vw,76px); line-height:.99; letter-spacing:-.065em; }
 .lede { max-width:470px; margin:24px 0 30px; color:#58677a; font-size:18px; line-height:1.65; }
-.actions { display:flex; flex-wrap:wrap; gap:12px; }.primaryButton { min-height:52px; padding:0 23px; }
+.actions { display:flex; flex-wrap:wrap; gap:12px; }
+.primaryButton { min-height:52px; padding:0 23px; }
 .secondaryButton { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 22px; border:1px solid #c9d1db; border-radius:9px; color:#23354c; font-size:14px; font-weight:800; text-decoration:none; }
 .secondaryButton:hover { border-color:#263d58; background:#fff; }
-.helper { margin:20px 0 0; color:#6e7c8e; font-size:13px; }.helper a { color:#1e5b82; font-weight:700; text-decoration:none; }
+.helper { margin:20px 0 0; color:#6e7c8e; font-size:13px; line-height:1.6; }
+.helper a { color:#1e5b82; font-weight:700; text-decoration:none; }
 .heroVisual { position:relative; min-height:430px; overflow:hidden; border-radius:26px; background:radial-gradient(circle at 79% 20%,rgba(227,76,93,.4),transparent 24%),linear-gradient(180deg,rgba(12,27,44,.08) 30%,rgba(12,27,44,.76) 100%),linear-gradient(130deg,#6c8798 0%,#29495f 44%,#142238 100%); box-shadow:0 25px 70px rgba(22,38,57,.22); }
 .visualTag { position:absolute; top:20px; left:20px; display:inline-flex; align-items:center; gap:9px; padding:11px 14px; border:1px solid rgba(255,255,255,.26); border-radius:100px; background:rgba(17,30,44,.58); color:#fff; font-size:12px; font-weight:700; backdrop-filter:blur(12px); }
-.statusDot { width:8px; height:8px; border-radius:50%; background:#e54a59; }.visualCaption { position:absolute; right:28px; bottom:30px; left:28px; color:#fff; }
-.visualCaption span { display:block; margin-bottom:10px; color:#f1a2aa; font-size:10px; font-weight:800; letter-spacing:.19em; }.visualCaption strong { font-size:clamp(24px,3vw,38px); letter-spacing:-.04em; }
-.benefits { padding:80px 28px 88px; background:#fff; }.sectionHeading { width:min(1200px,100%); margin:0 auto 32px; }.sectionHeading .eyebrow { margin-bottom:12px; }
+.statusDot { width:8px; height:8px; border-radius:50%; background:#e54a59; }
+.visualCaption { position:absolute; right:28px; bottom:30px; left:28px; color:#fff; }
+.visualCaption span { display:block; margin-bottom:10px; color:#f1a2aa; font-size:10px; font-weight:800; letter-spacing:.19em; }
+.visualCaption strong { font-size:clamp(24px,3vw,38px); letter-spacing:-.04em; }
+.benefits { padding:80px 28px 88px; background:#fff; }
+.sectionHeading { width:min(1200px,100%); margin:0 auto 32px; }
+.sectionHeading .eyebrow { margin-bottom:12px; }
 .sectionHeading h2 { max-width:650px; margin:0; color:#17263c; font-size:clamp(29px,4vw,44px); line-height:1.1; letter-spacing:-.05em; }
 .benefitGrid { width:min(1200px,100%); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.benefitCard { min-height:180px; padding:24px; border:1px solid #e2e7ec; border-radius:16px; background:#fbfcfd; }.benefitNumber { color:#c82a3a; font-size:12px; font-weight:800; letter-spacing:.12em; }
-.benefitCard h3 { margin:20px 0 9px; color:#1a2b42; font-size:18px; letter-spacing:-.025em; }.benefitCard p { margin:0; color:#667487; font-size:14px; line-height:1.65; }
-.footer { width:min(1200px,calc(100% - 56px)); min-height:88px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; color:#728094; font-size:12px; }.footerBrand { color:#273b54; font-weight:800; text-decoration:none; }.footerLinks { display:flex; gap:20px; }.footerLinks a { color:#46566b; font-weight:700; text-decoration:none; }
-@media(max-width:850px) { .hero { grid-template-columns:minmax(0,1fr); gap:38px; padding:54px 0 64px; }.heroCopy { max-width:680px; }.heroVisual { min-height:350px; }.benefitGrid { grid-template-columns:1fr; }.benefitCard { min-height:0; } }
-@media(max-width:560px) { .header,.hero,.footer { width:calc(100% - 36px); }.header { min-height:72px; }.brand { font-size:15px; }.brandMark { width:36px; height:36px; }.nav { gap:13px; }.navLink { font-size:12px; }.navButton { min-height:40px; padding:0 12px; font-size:12px; }.hero { min-height:0; }.hero h1 { font-size:50px; }.lede { font-size:16px; }.heroVisual { min-height:290px; }.benefits { padding:58px 18px; }.footer { padding:22px 0; align-items:flex-start; flex-direction:column; } }
+.benefitCard { min-height:180px; padding:24px; border:1px solid #e2e7ec; border-radius:16px; background:#fbfcfd; }
+.benefitNumber { color:#c82a3a; font-size:12px; font-weight:800; letter-spacing:.12em; }
+.benefitCard h3 { margin:20px 0 9px; color:#1a2b42; font-size:18px; letter-spacing:-.025em; }
+.benefitCard p { margin:0; color:#667487; font-size:14px; line-height:1.65; }
+.footer { width:min(1200px,calc(100% - 56px)); min-height:88px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; color:#728094; font-size:12px; }
+.footerBrand { color:#273b54; font-weight:800; text-decoration:none; }
+.footerLinks { display:flex; gap:20px; }
+.footerLinks a { color:#46566b; font-weight:700; text-decoration:none; }
+.site a:focus-visible { outline:3px solid #d92334; outline-offset:3px; }
+@media(max-width:850px) {
+  .hero { grid-template-columns:minmax(0,1fr); gap:32px; padding:48px 0 58px; }
+  .heroCopy { max-width:680px; }
+  .heroVisual { min-height:330px; }
+  .benefitGrid { grid-template-columns:1fr; }
+  .benefitCard { min-height:0; }
+}
+@media(max-width:560px) {
+  .header,.hero,.footer { width:calc(100% - 36px); }
+  .header { min-height:0; padding:14px 0 12px; display:grid; grid-template-columns:minmax(0,1fr); gap:14px; }
+  .brand { gap:10px; font-size:16px; }
+  .brandMark { width:38px; height:38px; border-radius:11px; font-size:21px; }
+  .nav { width:100%; gap:9px; }
+  .navLink { display:flex; flex:1 1 0; min-width:0; overflow-wrap:anywhere; min-height:44px; align-items:center; justify-content:center; padding:0 8px; border:1px solid #d9dfe6; border-radius:9px; background:#fff; color:#25364c; font-size:12px; line-height:1.2; text-align:center; }
+  .navLink:first-child { border-color:#d92334; background:#d92334; color:#fff; }
+  .navLink:hover { color:#c51f30; }
+  .navLink:first-child:hover { background:#b91f2e; color:#fff; }
+  .hero { min-height:0; gap:26px; padding:34px 0 46px; }
+  .eyebrow { margin-bottom:14px; font-size:10px; letter-spacing:.16em; }
+  .hero h1 { max-width:440px; font-size:clamp(40px,11vw,48px); line-height:1.02; letter-spacing:-.06em; }
+  .lede { max-width:36ch; margin:16px 0 21px; font-size:16px; line-height:1.55; }
+  .actions { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; }
+  .primaryButton,.secondaryButton { width:100%; min-height:52px; padding:0 16px; border-radius:10px; font-size:14px; }
+  .helper { margin-top:15px; padding-left:12px; border-left:2px solid #d7dee7; font-size:12px; line-height:1.55; }
+  .heroVisual { min-height:230px; border-radius:18px; box-shadow:0 14px 34px rgba(22,38,57,.16); }
+  .visualTag { top:14px; left:14px; padding:9px 12px; font-size:11px; }
+  .visualCaption { right:18px; bottom:20px; left:18px; }
+  .visualCaption span { font-size:9px; }
+  .visualCaption strong { display:block; max-width:100%; overflow-wrap:anywhere; font-size:clamp(20px,7vw,26px); }
+  .benefits { padding:48px 18px 54px; }
+  .sectionHeading { margin-bottom:22px; }
+  .sectionHeading .eyebrow { margin-bottom:10px; }
+  .sectionHeading h2 { font-size:30px; line-height:1.12; }
+  .benefitGrid { gap:11px; }
+  .benefitCard { padding:20px; border-radius:13px; }
+  .benefitCard h3 { margin:14px 0 7px; font-size:17px; }
+  .benefitCard p { font-size:13px; }
+  .footer { min-height:0; padding:23px 0 28px; align-items:flex-start; flex-direction:column; gap:13px; }
+  .footerLinks { flex-wrap:wrap; gap:12px 18px; }
+}
+@media(max-width:360px) {
+  .header,.hero,.footer { width:calc(100% - 28px); }
+  .nav { gap:7px; }
+  .navLink { padding:0 5px; font-size:11px; }
+  .hero h1 { font-size:39px; }
+}
