@@ -24,7 +24,7 @@ export default function Contact() {
         <Link href="/" className={homeStyles.brand} aria-label="HaulSmart Europe home"><span className={homeStyles.brandMark} aria-hidden="true">H</span><span>HaulSmart <small>EUROPE</small></span></Link>
         <nav className={homeStyles.nav} aria-label="Main navigation">
           <Link href="/contact" className={homeStyles.navLink} aria-current="page">Freight enquiry</Link>
-          <Link href="/login" className={homeStyles.navLink}>Sign in</Link>
+          <Link href="/login" className={homeStyles.navLink}>Existing customer login</Link>
         </nav>
       </header>
 
@@ -60,7 +60,7 @@ export default function Contact() {
         </form>
       </section>
 
-      <footer className={homeStyles.footer}><Link href="/" className={homeStyles.footerBrand}>HaulSmart Europe</Link><div className={homeStyles.footerLinks}><Link href="/contact">Freight enquiry</Link><Link href="/login">Sign in</Link></div><span>UK &amp; European transport</span></footer>
+      <footer className={homeStyles.footer}><Link href="/" className={homeStyles.footerBrand}>HaulSmart Europe</Link><div className={homeStyles.footerLinks}><Link href="/contact">Freight enquiry</Link><Link href="/login">Existing customer login</Link></div><span>UK &amp; European transport</span></footer>
     </main>
   </>;
 }
