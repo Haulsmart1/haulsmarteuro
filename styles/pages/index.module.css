@@ -1,15 +1,15 @@
-.site { min-height:100vh; overflow:hidden; color:#142238; background:#f5f7f9; font-family:Arial,Helvetica,sans-serif; }
+.site { min-height:100vh; overflow-x:clip; color:#142238; background:#f5f7f9; font-family:Arial,Helvetica,sans-serif; }
 .header { width:min(1200px,calc(100% - 56px)); min-height:88px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(20,34,56,.1); }
-.brand { display:inline-flex; align-items:center; gap:12px; color:#142238; font-size:18px; font-weight:800; letter-spacing:-.04em; text-decoration:none; }
+.brand { display:inline-flex; min-width:0; align-items:center; gap:12px; color:#142238; font-size:18px; font-weight:800; letter-spacing:-.04em; text-decoration:none; }
 .brand small { display:block; margin-top:2px; color:#69788a; font-size:9px; font-weight:700; letter-spacing:.2em; }
 .brandMark { display:grid; place-items:center; width:42px; height:42px; border-radius:12px; background:#d92334; color:#fff; font-size:23px; font-weight:800; }
-.nav { display:flex; align-items:center; gap:24px; }
-.navLink { color:#34445a; font-size:14px; font-weight:700; text-decoration:none; }
+.nav { display:flex; min-width:0; align-items:center; gap:24px; }
+.navLink { min-width:0; overflow-wrap:anywhere; color:#34445a; font-size:14px; font-weight:700; text-decoration:none; }
 .navLink:hover,.helper a:hover,.footerLinks a:hover { color:#c51f30; }
 .navButton,.primaryButton { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 20px; border-radius:9px; background:#d92334; color:#fff; font-size:14px; font-weight:800; text-decoration:none; }
 .navButton:hover,.primaryButton:hover { background:#b91f2e; color:#fff; }
 .hero { width:min(1200px,calc(100% - 56px)); min-height:570px; margin:0 auto; display:grid; grid-template-columns:minmax(0,.86fr) minmax(420px,1.14fr); align-items:center; gap:clamp(36px,7vw,96px); padding:64px 0 82px; }
-.heroCopy { max-width:510px; }
+.heroCopy { min-width:0; max-width:510px; overflow-wrap:anywhere; }
 .eyebrow { margin:0 0 18px; color:#bd2637; font-size:11px; font-weight:800; letter-spacing:.18em; }
 .hero h1 { max-width:540px; margin:0; color:#15243a; font-size:clamp(46px,6.3vw,76px); line-height:.99; letter-spacing:-.065em; }
 .lede { max-width:470px; margin:24px 0 30px; color:#58677a; font-size:18px; line-height:1.65; }
@@ -52,7 +52,7 @@
   .brand { gap:10px; font-size:16px; }
   .brandMark { width:38px; height:38px; border-radius:11px; font-size:21px; }
   .nav { width:100%; gap:9px; }
-  .navLink { display:flex; flex:1 1 0; min-height:44px; align-items:center; justify-content:center; padding:0 8px; border:1px solid #d9dfe6; border-radius:9px; background:#fff; color:#25364c; font-size:12px; line-height:1.2; text-align:center; }
+  .navLink { display:flex; flex:1 1 0; min-width:0; overflow-wrap:anywhere; min-height:44px; align-items:center; justify-content:center; padding:0 8px; border:1px solid #d9dfe6; border-radius:9px; background:#fff; color:#25364c; font-size:12px; line-height:1.2; text-align:center; }
   .navLink:first-child { border-color:#d92334; background:#d92334; color:#fff; }
   .navLink:hover { color:#c51f30; }
   .navLink:first-child:hover { background:#b91f2e; color:#fff; }
@@ -60,14 +60,14 @@
   .eyebrow { margin-bottom:14px; font-size:10px; letter-spacing:.16em; }
   .hero h1 { max-width:440px; font-size:clamp(40px,11vw,48px); line-height:1.02; letter-spacing:-.06em; }
   .lede { max-width:36ch; margin:16px 0 21px; font-size:16px; line-height:1.55; }
-  .actions { display:grid; grid-template-columns:1fr; gap:10px; }
+  .actions { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; }
   .primaryButton,.secondaryButton { width:100%; min-height:52px; padding:0 16px; border-radius:10px; font-size:14px; }
   .helper { margin-top:15px; padding-left:12px; border-left:2px solid #d7dee7; font-size:12px; line-height:1.55; }
   .heroVisual { min-height:230px; border-radius:18px; box-shadow:0 14px 34px rgba(22,38,57,.16); }
   .visualTag { top:14px; left:14px; padding:9px 12px; font-size:11px; }
   .visualCaption { right:18px; bottom:20px; left:18px; }
   .visualCaption span { font-size:9px; }
-  .visualCaption strong { font-size:26px; }
+  .visualCaption strong { display:block; max-width:100%; overflow-wrap:anywhere; font-size:clamp(20px,7vw,26px); }
   .benefits { padding:48px 18px 54px; }
   .sectionHeading { margin-bottom:22px; }
   .sectionHeading .eyebrow { margin-bottom:10px; }
