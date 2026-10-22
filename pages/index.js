@@ -24,7 +24,7 @@ export default function Home() {
         <Link href="/" className={styles.brand} aria-label="HaulSmart Europe home"><span className={styles.brandMark} aria-hidden="true">H</span><span>HaulSmart <small>EUROPE</small></span></Link>
         <nav className={styles.nav} aria-label="Main navigation">
           <Link href="/contact" className={styles.navLink}>Freight enquiry</Link>
-          <Link href="/login" className={styles.navLink}>Existing customer login</Link>
+          <Link href="/login" className={styles.navLink}>Customer login</Link>
         </nav>
       </header>
       <section className={styles.hero}>
