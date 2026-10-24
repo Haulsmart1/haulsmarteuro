@@ -1,0 +1,461 @@
+{
+  "deployment": "dpl_Dv54VvPKTwetFVTRoEXMyFYT286F",
+  "createdAt": "2026-10-13T10:42:45.058Z",
+  "rootPrefix": "src/",
+  "complete": false,
+  "reason": "Vercel connector tree truncates nested routes; contents truncate after 2000 base64 characters. Do not deploy recovered subset.",
+  "files": [
+    {
+      "path": "src/.eslintrc.json",
+      "uid": "60e30dd1e23169c720225efecfe86f411b77a29b"
+    },
+    {
+      "path": "src/app/robots.js",
+      "uid": "1611bb7eccd74df3eae10fb35d8360d553556455"
+    },
+    {
+      "path": "src/app/sitemap.js",
+      "uid": "eef8b7e5a413a79d94671a4532a6099791daa3ff"
+    },
+    {
+      "path": "src/components/CookieBanner.js",
+      "uid": "d7e63769396f91c3aa24fd4fc379a209075f7be2"
+    },
+    {
+      "path": "src/components/MarketplaceApp.js",
+      "uid": "3a98488cfd22851212d163012edecd61b7abc130"
+    },
+    {
+      "path": "src/components/MarketplaceAuth.js",
+      "uid": "94a62024203962ec4daf1a88c38dd250e4d68122"
+    },
+    {
+      "path": "src/components/MarketplaceShell.js",
+      "uid": "32ed7331ca04ac1837d9d11a7af49e3deaf1996d"
+    },
+    {
+      "path": "src/database/001_marketplace.sql",
+      "uid": "13e9e765f483ea1cdc65f6c97a5e52f612e59eec"
+    },
+    {
+      "path": "src/database/002_vehicle_fit.sql",
+      "uid": "b5137913e2dc8ae87c9d4142623348dc93c0dcc7"
+    },
+    {
+      "path": "src/database/003_safe_row_locks.sql",
+      "uid": "08ec3046fe2b806fa050e3e1d68ca36ab79b14f2"
+    },
+    {
+      "path": "src/database/004_insert_visibility.sql",
+      "uid": "7c5c2c6f91f0363c92fabeb3cdf0d10a9c3bdf8f"
+    },
+    {
+      "path": "src/database/005_operations_retries.sql",
+      "uid": "96aa0fd254716b78e899f59806f737110fab0a5e"
+    },
+    {
+      "path": "src/database/006_square_boundary.sql",
+      "uid": "5e8c21f917ac79cb90a4ec4754005ef89d4a0531"
+    },
+    {
+      "path": "src/database/007_square_audit_receipt.sql",
+      "uid": "645dbf159c91a49245b440ecd616128bd50600be"
+    },
+    {
+      "path": "src/database/008_square_worker_columns.sql",
+      "uid": "b2a29232c86c9734c85b5556f585c3cfac99191e"
+    },
+    {
+      "path": "src/database/009_request_limits_indexes.sql",
+      "uid": "e22306e141aa72ec3ef0336273af8dc9807a3362"
+    },
+    {
+      "path": "src/database/010_job_contacts.sql",
+      "uid": "5560840be0c92429b717bc70dafc78928bab73e8"
+    },
+    {
+      "path": "src/database/011_vehicle_booking.sql",
+      "uid": "b1ed79c9883fb8a9da783bb949a7aea4a8306d7a"
+    },
+    {
+      "path": "src/database/012_booking_visibility.sql",
+      "uid": "530e7d89dc9e113af61c2a601eeb515b6e2ec7ed"
+    },
+    {
+      "path": "src/database/013_assignment_columns.sql",
+      "uid": "2295bf43d855ff661ee5c6291aa11ca68c4346e5"
+    },
+    {
+      "path": "src/database/014_dispatch_contacts.sql",
+      "uid": "90d53c841b65c6fa53d49337e1de9b4c4e108fcb"
+    },
+    {
+      "path": "src/database/015_company_member_locks.sql",
+      "uid": "608761c0e754731c9ad56792492bd3727438b305"
+    },
+    {
+      "path": "src/database/016_transactional_email.sql",
+      "uid": "654cae4d6bab67025af812461825340696d3e504"
+    },
+    {
+      "path": "src/database/017_account_email_dispatch.sql",
+      "uid": "7f85dd76ee19c950a9c60f7f5fe5c76c1e1387e6"
+    },
+    {
+      "path": "src/database/verification-recovery-fixture.sql",
+      "uid": "b2f36e1078a28169dc4abc46ec52ae0db0af1c09"
+    },
+    {
+      "path": "src/jsconfig.json",
+      "uid": "e9c9d3f7c554dc53680b0d13a2be84507682eace"
+    },
+    {
+      "path": "src/lib/administrator-bootstrap.js",
+      "uid": "2ee2c28a55eb05d81d0cc16a2bff22fbada0a9ba"
+    },
+    {
+      "path": "src/lib/auth-request.js",
+      "uid": "e8b6ea9fad90444f836c1fd08ab379af61549622"
+    },
+    {
+      "path": "src/lib/auth/client.js",
+      "uid": "4060ffffb8ad520c09b6d2f5f6a3c9cfb121eee3"
+    },
+    {
+      "path": "src/lib/auth/server.js",
+      "uid": "58aeca1dbb9a0308bd04eea2a7edc42acd2b6e62"
+    },
+    {
+      "path": "src/lib/capacity-compatibility.js",
+      "uid": "daf821758adf6e22cb96a242c605e38ad328bb87"
+    },
+    {
+      "path": "src/lib/carrier-job-view.js",
+      "uid": "bd8c281d3442ddff34a93bef1e2bdf91ee027931"
+    },
+    {
+      "path": "src/lib/email-dispatch.js",
+      "uid": "4b8888b3d72c406ce1c9a2fcb57c2f9eac8c1207"
+    },
+    {
+      "path": "src/lib/entitlements.js",
+      "uid": "366b1050dcff2941a6e4e6445ae4b00e4a9653dd"
+    },
+    {
+      "path": "src/lib/launch-documents.js",
+      "uid": "82224061aa0f9839f9267c507e75707ffa5027fe"
+    },
+    {
+      "path": "src/lib/marketplace-capabilities.js",
+      "uid": "2d4102c064c2417a91cb42981e35932b4565c88d"
+    },
+    {
+      "path": "src/lib/marketplace-db.js",
+      "uid": "f8c979583f2019b7180baa63e72534dbefdbb88a"
+    },
+    {
+      "path": "src/lib/marketplace-mutation.js",
+      "uid": "fdaf35d71a0252421218210123a1e8133a828889"
+    },
+    {
+      "path": "src/lib/marketplace-options.js",
+      "uid": "5222750391dfba119a3f5f08bc12540518c08337"
+    },
+    {
+      "path": "src/lib/marketplace-service.js",
+      "uid": "d156b62fc310c97b86883fe56dd65c9343c3832a"
+    },
+    {
+      "path": "src/lib/marketplace-validation.js",
+      "uid": "476564250306f73f469283da4f856c7f7dd7e741"
+    },
+    {
+      "path": "src/lib/money.js",
+      "uid": "51a1a5116a278e898c59f58cf172b7ef1998f92c"
+    },
+    {
+      "path": "src/lib/pricing.js",
+      "uid": "baa94a0573148eab819f2850a29d4a8aec673015"
+    },
+    {
+      "path": "src/lib/request-limit.js",
+      "uid": "ffc42735a1c6636f9901a2e6b0f040a11c0f3406"
+    },
+    {
+      "path": "src/lib/request-origin.js",
+      "uid": "e0a4bbd473452e9d8de091d8d765e4c334d68348"
+    },
+    {
+      "path": "src/lib/session-access.js",
+      "uid": "018ee3aab9d9055fac9e1a6487b47a2ee3ab5ad1"
+    },
+    {
+      "path": "src/lib/square-boundary.js",
+      "uid": "ee406ff8e1c543dd89fdd0ac0ff68f3a7dc9cfe7"
+    },
+    {
+      "path": "src/lib/square-store.js",
+      "uid": "117a8abcff084c7f7303f0fe381f0cb4f75618b9"
+    },
+    {
+      "path": "src/lib/transaction.js",
+      "uid": "2631db81afcc0c93ee403919c627f2bf363de6f8"
+    },
+    {
+      "path": "src/lib/transactional-email.js",
+      "uid": "af115a6a015a60c1e09fcfc79c98ffc21c456020"
+    },
+    {
+      "path": "src/next.config.mjs",
+      "uid": "28c6284b9e84a6c79b49b1b00943e525d72b0d02"
+    },
+    {
+      "path": "src/package-lock.json",
+      "uid": "96c31c310830d5d836a85ae4e9eb624d5feaa718"
+    },
+    {
+      "path": "src/package.json",
+      "uid": "d2d4c5709eac36a274ff97afb631b4a0128d927c"
+    },
+    {
+      "path": "src/pages/_document.js",
+      "uid": "742af96bb527b5f4b8f93bbef829d30ba4847ba7"
+    },
+    {
+      "path": "src/pages/account/recover.js",
+      "uid": "41b4e6dc357c511e943117d32cf289806d6cab1e"
+    },
+    {
+      "path": "src/pages/account/register.js",
+      "uid": "9d19a30159c0f7e8060d552411c282d7df9e1232"
+    },
+    {
+      "path": "src/pages/account/reset-password.js",
+      "uid": "4c9fc69382748282017e86ceb6b7d2af30513943"
+    },
+    {
+      "path": "src/pages/account/sign-in.js",
+      "uid": "fc03fe0ce89614feecf12c52ca2f5172244c5fcf"
+    },
+    {
+      "path": "src/pages/account/verify-email.js",
+      "uid": "52995cfea1276f7493089a3176a012ee24d58817"
+    },
+    {
+      "path": "src/pages/api/ask.js",
+      "uid": "5172dc5a16462b04cb075733c1c86558d9bda5fb"
+    },
+    {
+      "path": "src/pages/dashboard.js",
+      "uid": "eb2efe28e5a2c47e7c6d5acc08cf4be408dbf8e5"
+    },
+    {
+      "path": "src/pages/index.js",
+      "uid": "98b75db804a35fc8664676da54b7e36d76f7eaa9"
+    },
+    {
+      "path": "src/pages/legal/[document].js",
+      "uid": "ff04cbc73a2cc2fa162eed672d84b602f8d941c5"
+    },
+    {
+      "path": "src/pages/marketplace.js",
+      "uid": "d4c67dbb37da076cb6a1526954643283e4e04792"
+    },
+    {
+      "path": "src/pages/operations.js",
+      "uid": "3ba293bbd7b00e75c7e7a3d103920172eed45abf"
+    },
+    {
+      "path": "src/pages/support.js",
+      "uid": "8ee838eb87506ef4989c6082aecf61dea0221c58"
+    },
+    {
+      "path": "src/pages/uk-european-loads.js",
+      "uid": "0ad6bdfdfb611b8164585ec75065142ef8a93034"
+    },
+    {
+      "path": "src/public/fonts/INTER-LICENSE.txt",
+      "uid": "3f7694ca276b572e201be2691b9a69032469f1d8"
+    },
+    {
+      "path": "src/public/fonts/inter-bold.woff2",
+      "uid": "5197a7aeb22454110aa1f3ef3ed4c98ca7ef1ba1"
+    },
+    {
+      "path": "src/public/fonts/inter-regular.woff2",
+      "uid": "68f645c6b6ff12e25c54b13d4ed119e631dcbb26"
+    },
+    {
+      "path": "src/public/images/european-freight-hero.png",
+      "uid": "8947fa1639dca54589695feaad7e2c02ecec888e"
+    },
+    {
+      "path": "src/scripts/bootstrap-stuart-administrator.mjs",
+      "uid": "162f4937d0655f9e8131ad16dcea50fee3c5cf70"
+    },
+    {
+      "path": "src/scripts/commercial-release-gate.mjs",
+      "uid": "d28ab08104b0e9935c3e59058a6ad3480c755003"
+    },
+    {
+      "path": "src/scripts/deliver-transactional-email.mjs",
+      "uid": "09395e270679d990ed4a2bfe90024c13b3fb5753"
+    },
+    {
+      "path": "src/scripts/forensic-history.mjs",
+      "uid": "0cc02d6600f268362dd34f968827df78fbbc60e3"
+    },
+    {
+      "path": "src/scripts/pricing-recovery-history.mjs",
+      "uid": "af732a1ad73d4885aa9377d639cc29bb16b4550e"
+    },
+    {
+      "path": "src/scripts/scan-marketplace-secrets.mjs",
+      "uid": "5bb55484a0afe8509e9899e5e317c650016844fd"
+    },
+    {
+      "path": "src/scripts/verification-target.mjs",
+      "uid": "6e248ec483aa72d0a5ba4b7359ac58217e40d874"
+    },
+    {
+      "path": "src/scripts/verify-accessibility.mjs",
+      "uid": "2a832e53a440daa689832da6f607d96906d2326e"
+    },
+    {
+      "path": "src/scripts/verify-authenticated-load.mjs",
+      "uid": "0ebfa4f7d365f60802139787f9584542dea3f8dc"
+    },
+    {
+      "path": "src/scripts/verify-browser.cjs",
+      "uid": "b463876954dedc301da7f5aba1b947a2c0e7ea73"
+    },
+    {
+      "path": "src/scripts/verify-commercial-preview.mjs",
+      "uid": "89a0d004ec80816fac19afb15629146789c71c6b"
+    },
+    {
+      "path": "src/scripts/verify-local.mjs",
+      "uid": "b026d2179f75fdfc04f0f859dc7d8d4705654da1"
+    },
+    {
+      "path": "src/scripts/verify-marketplace-browser.mjs",
+      "uid": "fef679b4c1792d6b5c1c8698030462a89b9a66dd"
+    },
+    {
+      "path": "src/scripts/verify-marketplace-failures.mjs",
+      "uid": "1de7e77c01cb909d6e4559d1fb31ea2a29a6cd4f"
+    },
+    {
+      "path": "src/scripts/verify-marketplace-load.mjs",
+      "uid": "bd5f6fde4128fe2f57dbbf4282bccdf3b6e625f0"
+    },
+    {
+      "path": "src/src/pages/dashboard.js",
+      "uid": "b82de5da1bc50355b2dbac2283ba08ddfa4dcc3f"
+    },
+    {
+      "path": "src/src/pages/register.js",
+      "uid": "0838ca00319c97c8145428dbce95ad07f3c58024"
+    },
+    {
+      "path": "src/styles/pages/index.module.css",
+      "uid": "15f605c424762a5a4d9930295c2042b1007444c8"
+    },
+    {
+      "path": "src/styles/pages/marketplace.module.css",
+      "uid": "17eabf61ec23f0518fbe5613d499c89e187f89a8"
+    },
+    {
+      "path": "src/tests/administrator-bootstrap.test.js",
+      "uid": "c210838a3ee955629dbd20ebd5d7d1a874f6e6c1"
+    },
+    {
+      "path": "src/tests/api-security.test.js",
+      "uid": "1bb29805b49b8f02caf46a372d8b3a281ba03b6b"
+    },
+    {
+      "path": "src/tests/auth-request.test.js",
+      "uid": "fa26a2aa7ab0c86c21e25f2282d40692d326ebc7"
+    },
+    {
+      "path": "src/tests/capacity-compatibility.test.js",
+      "uid": "3b47850aa5479f616f98a8aaf559d20f1cc480f4"
+    },
+    {
+      "path": "src/tests/carrier-job-view.test.js",
+      "uid": "b375c0585f9a4b1555a880821e49fd1148e02dff"
+    },
+    {
+      "path": "src/tests/email-dispatch.test.js",
+      "uid": "2bcb629aa6ed3daf91d78b426fb95bf321d9dc0e"
+    },
+    {
+      "path": "src/tests/email-postgres.test.mjs",
+      "uid": "a9e7d8df16d7a1a8c9c14a6f3df5992eb72e063c"
+    },
+    {
+      "path": "src/tests/entitlements.test.js",
+      "uid": "83cbf5a885846bf1aa48da3e157f34ec2cd51a7d"
+    },
+    {
+      "path": "src/tests/job-contacts.test.js",
+      "uid": "14a09d1813e81df45f142164c7a202335c7182af"
+    },
+    {
+      "path": "src/tests/marketplace-capabilities.test.js",
+      "uid": "d5970d6250507573cea5dbcd07570ef563197d97"
+    },
+    {
+      "path": "src/tests/marketplace-mutation.test.js",
+      "uid": "9227a2f64c387f81e070e40ad49a2f44d5bdc3b2"
+    },
+    {
+      "path": "src/tests/marketplace-postgres.test.mjs",
+      "uid": "fc764ea1e949745ad149afd3b09bc152962ca57d"
+    },
+    {
+      "path": "src/tests/marketplace-validation.test.js",
+      "uid": "5a0fb25d1f51a6f0a0fce89055373709187cceef"
+    },
+    {
+      "path": "src/tests/money.test.js",
+      "uid": "19da0a747a0a32337ac632fe21e7ac74245416fc"
+    },
+    {
+      "path": "src/tests/pricing.test.js",
+      "uid": "54ab0999863ebd1d7b84bb473d3da1ba3efaba76"
+    },
+    {
+      "path": "src/tests/request-limit-postgres.test.mjs",
+      "uid": "8ed5ba47aa764d0a9c43faec2d7154acee97baf3"
+    },
+    {
+      "path": "src/tests/request-origin.test.js",
+      "uid": "28d548c2a0be47864d161b0706d0b367faab5290"
+    },
+    {
+      "path": "src/tests/session-access.test.js",
+      "uid": "bfc117450ec16d69de5155bc2a22852151f72622"
+    },
+    {
+      "path": "src/tests/square-boundary.test.js",
+      "uid": "55ff57ce3054fd8b425d1f97a4ed2a71ba35b3b9"
+    },
+    {
+      "path": "src/tests/square-postgres.test.mjs",
+      "uid": "c47187b6229c7798d73ffa0a6d5384f29397f5b1"
+    },
+    {
+      "path": "src/tests/transaction.test.js",
+      "uid": "c1796aa290ed45683498d7732304c511ac312b9b"
+    },
+    {
+      "path": "src/tests/transactional-email.test.js",
+      "uid": "f4897bb6d9a8956f52927d9622be9489247df1da"
+    },
+    {
+      "path": "src/vercel.json",
+      "uid": "f27b50b9e19dcb5a800af2087f1c0811525225c5"
+    }
+  ]
+}
