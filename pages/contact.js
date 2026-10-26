@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import CookieBanner from "@/components/CookieBanner";
-import { buildManualEnquiryMailto } from "@/lib/manualEnquiry";
+import { buildManualEnquiryMailto, MANUAL_ENQUIRY_EMAIL } from "@/lib/manualEnquiry";
 import homeStyles from "@/styles/pages/index.module.css";
 import styles from "@/styles/pages/contact.module.css";
 
@@ -57,6 +57,7 @@ export default function Contact() {
           <label>Preferred timing <span>(optional)</span><input name="timing" placeholder="Collection date or delivery deadline" /></label>
           <button type="submit">Open email draft</button>
           <p id="submission-note" className={styles.note}>Your enquiry is not submitted until you send the prepared message from your email app.</p>
+          <p className={styles.note}>If no draft opens, email <a href={`mailto:${MANUAL_ENQUIRY_EMAIL}`}>{MANUAL_ENQUIRY_EMAIL}</a> directly with the same collection, delivery, goods and timing details. The operations team will review it manually.</p>
         </form>
       </section>
 
