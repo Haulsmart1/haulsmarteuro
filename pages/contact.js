@@ -99,7 +99,7 @@ export default function Contact() {
           <p id="submission-note" className={`${styles.note} ${submission.kind === "error" ? styles.error : ""} ${submission.kind === "success" ? styles.success : ""}`} role="status" aria-live="polite">
             {submission.message || "Your details are sent only after the operations mailbox accepts the message."}
           </p>
-          <p className={styles.note}>Prefer email or having trouble submitting? Your details are also available in a prepared email to <a href={`mailto:${MANUAL_ENQUIRY_EMAIL}`}>{MANUAL_ENQUIRY_EMAIL}</a>.</p>
+          <p className={styles.note}>Prefer email or having trouble submitting? Use the button below to open a prepared email with the same collection, delivery, goods and timing details, addressed to <a href={`mailto:${MANUAL_ENQUIRY_EMAIL}`}>{MANUAL_ENQUIRY_EMAIL}</a>.</p>
           <button type="button" className={styles.secondaryButton} onClick={openEmailDraft}>Use email app instead</button>
         </form>
       </section>
