@@ -86,15 +86,15 @@ export default function Contact() {
             <label>Leave this field empty<input name="website" tabIndex="-1" autoComplete="off" /></label>
           </div>
           <div className={styles.fieldGrid}>
-            <label>Name<input name="name" autoComplete="name" required /></label>
-            <label>Company<input name="company" autoComplete="organization" required /></label>
-            <label>Email<input name="replyEmail" type="email" autoComplete="email" required /></label>
-            <label>Phone <span>(optional)</span><input name="phone" type="tel" autoComplete="tel" /></label>
-            <label>Collection location<input name="origin" autoComplete="street-address" required /></label>
-            <label>Delivery location<input name="destination" required /></label>
+            <label>Name<input name="name" maxLength={120} autoComplete="name" required /></label>
+            <label>Company<input name="company" maxLength={160} autoComplete="organization" required /></label>
+            <label>Email<input name="replyEmail" maxLength={254} type="email" autoComplete="email" required /></label>
+            <label>Phone <span>(optional)</span><input name="phone" maxLength={80} type="tel" autoComplete="tel" /></label>
+            <label>Collection location<input name="origin" maxLength={120} autoComplete="street-address" required /></label>
+            <label>Delivery location<input name="destination" maxLength={120} required /></label>
           </div>
-          <label>Goods and load details<textarea name="goods" rows="5" placeholder="Describe the goods, quantity, weight, dimensions and any special handling requirements." required /></label>
-          <label>Preferred timing <span>(optional)</span><input name="timing" placeholder="Collection date or delivery deadline" /></label>
+          <label>Goods and load details<textarea name="goods" maxLength={1000} rows="5" placeholder="Describe the goods, quantity, weight, dimensions and any special handling requirements." required /></label>
+          <label>Preferred timing <span>(optional)</span><input name="timing" maxLength={200} placeholder="Collection date or delivery deadline" /></label>
           <button type="submit" disabled={submission.kind === "sending"}>{submission.kind === "sending" ? "Sending…" : "Send freight enquiry"}</button>
           <p id="submission-note" className={`${styles.note} ${submission.kind === "error" ? styles.error : ""} ${submission.kind === "success" ? styles.success : ""}`} role="status" aria-live="polite">
             {submission.message || "Your details are sent only after the operations mailbox accepts the message."}
