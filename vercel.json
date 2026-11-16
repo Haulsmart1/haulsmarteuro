@@ -1,8 +1,8 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
+  "framework": "nextjs",
+  "installCommand": "npm ci --ignore-scripts --legacy-peer-deps --no-audit --no-fund",
+  "buildCommand": "npm run build",
+  "regions": [
+    "fra1"
   ]
 }
