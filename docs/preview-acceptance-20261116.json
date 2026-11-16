@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-11-16",
+  "scope": "Protected Preview; synthetic data only. Not a production approval.",
+  "design_heading": [
+    "Dedicated transportacross the UK & Europe."
+  ],
+  "preview_origin": "https://haulsmarteuro-91i13ij7x-haulsmart.vercel.app",
+  "mobile_width": 390,
+  "mobile_horizontal_overflow": false,
+  "api_receipt": {
+    "status": 200,
+    "body": {
+      "state": "received",
+      "message": "Your enquiry has been received and stored. Operations notification is pending; please call for urgent freight. This is not a quotation or booking confirmation.",
+      "reference": "HAUL-C99097F842914A7892D42453EF365966"
+    }
+  },
+  "retry_statuses": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "all_retries_same_reference": true,
+  "changed_payload_status": 409,
+  "anonymous_staff_status": 401,
+  "anonymous_staff_cache_control": "private, no-store",
+  "homepage_links": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/uk-european-loads/",
+      "status": 200
+    },
+    {
+      "path": "/contact/",
+      "status": 200
+    },
+    {
+      "path": "/contact",
+      "status": 200
+    },
+    {
+      "path": "/uk-european-loads/#return-loads",
+      "status": 200
+    },
+    {
+      "path": "/uk-european-loads/#van-loads",
+      "status": 200
+    },
+    {
+      "path": "/uk-european-loads/#european-work",
+      "status": 200
+    },
+    {
+      "path": "/privacy/",
+      "status": 200
+    },
+    {
+      "path": "/enquiry-terms/",
+      "status": 200
+    }
+  ],
+  "images_after_scroll": [],
+  "database_readback": {
+    "synthetic_record_count": 1,
+    "notification": "disabled",
+    "email_attempts": 0,
+    "status": "new",
+    "audit_event_count": 1
+  },
+  "limitations": [
+    "Real staff password login and human response acceptance require Stuart.",
+    "Registered legal company details and retention approval pending.",
+    "Production database/configuration and domain release pending specific approval."
+  ],
+  "note": "API message subsequently clarified to state automatic email disabled; final release retested separately."
+}
