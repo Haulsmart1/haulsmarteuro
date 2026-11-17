@@ -11,3 +11,8 @@ EMAIL_PORT=465
 EMAIL_USER=help@haul-smart.com
 EMAIL_TO=help@haul-smart.com
 
+
+.env
+.env.*
+!.env.example
+.next/

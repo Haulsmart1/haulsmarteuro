@@ -1,0 +1,11 @@
+BEGIN;
+ALTER TABLE haulsmart_enquiries.enquiries DROP CONSTRAINT IF EXISTS enquiries_status_check;
+ALTER TABLE haulsmart_enquiries.enquiries ADD CONSTRAINT enquiries_status_check CHECK (status IN ('new','open','reviewing','quoted','booked','closed','declined'));
+ALTER TABLE haulsmart_enquiries.enquiries ADD COLUMN IF NOT EXISTS updated_at timestamptz NOT NULL DEFAULT now();
+ALTER TABLE haulsmart_enquiries.enquiries ADD COLUMN IF NOT EXISTS source text NOT NULL DEFAULT 'website';
+CREATE INDEX IF NOT EXISTS enquiry_status_created ON haulsmart_enquiries.enquiries (status,created_at DESC);
+GRANT USAGE ON SCHEMA haulsmart_enquiries TO haulsmart_capture;
+GRANT SELECT, INSERT ON ALL TABLES IN SCHEMA haulsmart_enquiries TO haulsmart_capture;
+GRANT UPDATE ON haulsmart_enquiries.enquiries, haulsmart_enquiries.rate_limits TO haulsmart_capture;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA haulsmart_enquiries TO haulsmart_capture;
+COMMIT;
