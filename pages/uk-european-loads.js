@@ -56,10 +56,7 @@ function ProfessionalTransportGuide() {
             ],
           }),
           (0, t.jsx)(n.default, { href: "/", children: "Back to Haulsmart" }),
-          (0, t.jsx)("span", {
-            className: o.default.status,
-            children: "In development",
-          }),
+          (0, t.jsx)(n.default, {href:"/login",className:o.default.signIn,children:"Sign in"}),
         ],
       }),
       (0, t.jsxs)("main", {
