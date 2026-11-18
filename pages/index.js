@@ -156,7 +156,10 @@ function ProfessionalHome() {
               }),
             ],
           }),
-          (0, t.jsx)(n.default, {href:"/contact",className:a.default.status,children:"Freight enquiries"}),
+          (0, t.jsxs)("div", {className:a.default.headerActions,children:[
+            (0, t.jsx)(n.default, {href:"/contact",className:a.default.status,children:"Freight enquiries"}),
+            (0, t.jsx)(n.default, {href:"/login",className:a.default.signIn,children:"Sign in"}),
+          ]}),
         ],
       }),
       (0, t.jsxs)("main", {
